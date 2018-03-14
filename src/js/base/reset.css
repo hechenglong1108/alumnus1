@@ -1,0 +1,72 @@
+@charset "UTF-8";
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset, input, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-family: "PingFangSC-Medium";
+}
+
+ul {
+  list-style: none; }
+
+ol {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent; }
+
+html {
+  font-family: "PingFangSC-Medium";
+  font-size: 20px;
+}
+
+i {
+  font-style: normal; }
+
+.lf {
+  float: left; }
+
+.rt {
+  float: right; }
+
+.clear {
+  clear: both; }
+
+.overflow {
+  overflow: hidden; }
+
+.center {
+  text-align: center; }
+
+.through {
+  text-decoration: line-through; }
+
+body {
+  background: #fff; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+input, button {
+  outline: none; }
+
+img {
+  display: block; }
+
+[v-cloak] {
+  display: none !important; }
+
+select {
+  background: #fff;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+body {
+  margin: 0 auto; }
+
+/*移动端select样式统一*/

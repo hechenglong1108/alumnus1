@@ -1,0 +1,40 @@
+{
+  "name": "shisanlang",
+  "version": "1.0.0",
+  "description": "石三狼项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.renrunkeji.com/Supplychain/shisanlang_front.git"
+  },
+  "author": "rmj",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-connect-proxy": "^0.3.1",
+    "gulp-file-include": "^1.2.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-inject": "^4.3.0",
+    "gulp-jpeg-recompress": "0.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-uglify": "^3.0.0",
+    "http-proxy-middleware": "^0.17.4",
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-optipng": "^5.2.1",
+    "map-stream": "0.0.7"
+  },
+  "dependencies": {
+    "sass": "^1.0.0-beta.4"
+  }
+}

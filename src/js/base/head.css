@@ -1,0 +1,23 @@
+.head{
+    height:2.2rem;
+    width:100%;
+    background: #649FF1;
+    position: relative;
+}
+.head>i{
+    width:0.5rem;
+    height:0.85rem;
+    padding:0.3rem;
+    background: url(../../../style/images/Back_Chevron@2x.png) no-repeat;
+    background-size: 0.5rem 0.85rem;
+    position: absolute;
+    left:0.57rem;
+    top:0.67rem;
+}
+.head>p{
+    height:2.2rem;
+    line-height: 2.2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #fff;
+}
