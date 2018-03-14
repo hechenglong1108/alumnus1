@@ -1,0 +1,39 @@
+.header {
+    height: .6rem;
+    width: 100%;
+    position: relative;
+    background: transparent;
+    border-bottom: 2px solid #ddd;
+}
+
+.header > p {
+    height: .6rem;
+    line-height: .6rem;
+    text-align: center;
+    font-size: .26rem;
+    font-family: "PingFangSC-Medium";
+}
+.students{
+    font-size: .24rem;
+    padding: .2rem 0;
+    border-bottom: 1px dotted #ddd;
+}
+.reg{
+    background: #649FF1;
+}
+.noreg{
+    background: #c2c2c2;
+}
+.students h5{
+    font-size: .26rem;
+}
+.students h5 span{
+    margin-left: .4rem;
+}
+.students p:nth-child(2){
+    padding-left: .4rem;
+    margin: .2rem 0;
+}
+.students p:nth-child(3){
+    padding-left: .4rem;
+}

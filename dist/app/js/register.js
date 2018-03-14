@@ -3,14 +3,75 @@
  */
 
 
-var register=new Vue({
+var login=new Vue({
     el:"#register",
     data:{
+        name:"",
+        idetify:"",
+        years:"",
+        banji:"",
+        province:"",
+        city:"",
+        area:"",
+        address:"",
+        companyName:"",
+        department:"",
+        post:"",
+        mobile:"",
+        heads:""
     },
     methods:{
         reg: function(){
             var _data = new FormData($("#registerfrom")[0]),
                 _inThis = this;
+
+            if(!this.name){
+                Base.Messager.open("请输入姓名")
+                return;
+            }
+            if(!this.idetify){
+                Base.Messager.open("请输入身份证后六位")
+                return;
+            }
+            if(!this.years){
+                Base.Messager.open("请选择毕业年份")
+                return;
+            }
+            if(!this.banji){
+                Base.Messager.open("请选择班级")
+                return;
+            }
+            if(!this.province || !this.city || !this.area){
+                Base.Messager.open("请选择所在地区")
+                return;
+            }
+            if(!this.address){
+                Base.Messager.open("请输入详细地址")
+                return;
+            }
+            if(!this.companyName){
+                Base.Messager.open("请输入公司名称")
+                return;
+            }
+            if(!this.department){
+                Base.Messager.open("请输入部门名称")
+                return;
+            }
+
+            if(!this.post){
+                Base.Messager.open("请输入职务")
+                return;
+            }
+
+            if(!this.mobile){
+                Base.Messager.open("请输入手机号码")
+                return;
+            }
+            if(!this.heads){
+                Base.Messager.open("请选择头像")
+                return;
+            }
+
             $.ajax({
                 type: 'post',
                 url: '/api/dop/charge/borrower/apply',

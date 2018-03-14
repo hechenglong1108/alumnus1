@@ -494,5 +494,5 @@ var Base = {
 Common.Base.isLogin();*/
 
 $(function(){
-    Base.judgelogin();
+    /*Base.judgelogin();*/
 })
