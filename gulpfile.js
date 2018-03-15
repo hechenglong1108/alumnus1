@@ -101,7 +101,7 @@ gulp.task('imgmin', function() {
 //把所有html页面扔进dist文件夹(不作处理);
 //命令行使用gulp html启用此任务;
 gulp.task('html', function() {
-    return gulp.src('./src/**/*.html')
+    return gulp.src(['./src/**/*.html','./src/**/*.eot','./src/**/*.svg','./src/**/*.ttf','./src/**/*.woff'])
         .pipe(gulp.dest('./dist'));
 });
 

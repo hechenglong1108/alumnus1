@@ -16,15 +16,17 @@
     <!-- endinject -->
     <script src="../js/base/adapter.js"></script>
     <link rel="stylesheet" href="css/index.css">
+
 </head>
 <body>
 <div id="login">
-    <div class="header">
+    <div class="head">
+        <i @click="goback"></i>
         <p>我的</p>
     </div>
     <ul class="Box">
         <li class="box">
-            <a href="">
+            <a href="class.html">
                 <div>
                     <img src="images/banji.png" alt="">
                 </div>
@@ -33,7 +35,7 @@
 
         </li>
         <li class="box">
-            <a href="">
+            <a href="message.html?type=1">
                 <div>
                     <img src="images/banjiliuyanban.png" alt="">
                 </div>
@@ -42,7 +44,7 @@
 
         </li>
         <li class="box">
-            <a href="">
+            <a href="invitation.html">
                 <div>
                     <img src="images/lianjie.png" alt="">
                 </div>
@@ -51,7 +53,7 @@
 
         </li>
         <li class="box">
-            <a href="">
+            <a href="message.html?type=2">
                 <div>
                     <img src="images/personliuyanban.png" alt="">
                 </div>
@@ -65,4 +67,17 @@
 </body>
 <!-- inject:js -->
 <!-- endinject -->
+<script>
+    var login=new Vue({
+        el:"#login",
+        data:{
+            classList:[]
+        },
+        methods:{
+            goback: function(){
+                history.go(-1)
+            }
+        }
+    })
+</script>
 </html>

@@ -1,0 +1,107 @@
+.header {
+    height: .6rem;
+    width: 100%;
+    position: relative;
+    background: transparent;
+    border-bottom: 2px solid #ddd;
+}
+
+.header > p {
+    height: .6rem;
+    line-height: .6rem;
+    text-align: center;
+    font-size: .26rem;
+    font-family: "PingFangSC-Medium";
+}
+.students{
+    font-size: .24rem;
+    padding: .2rem 0;
+    border-bottom: 1px dotted #ddd;
+}
+.reg{
+    background: #649FF1;
+}
+.noreg{
+    background: #c2c2c2;
+}
+.students h5{
+    font-size: .26rem;
+}
+.students h5 span{
+    margin-left: .4rem;
+}
+.students p:nth-child(2){
+    padding-left: .4rem;
+    margin: .2rem 0;
+}
+.students p:nth-child(3){
+    padding-left: .4rem;
+}
+
+
+
+
+
+.search  ul  li {
+    width: 7.5rem;
+}
+
+.search  ul  li  label {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 0.2rem;
+    width: 100%;
+    display: inline-block;
+    height: 0.4rem;
+    font-size: 0.24rem;
+    margin-left: .3rem;
+    position: relative; }
+.search  ul  li  label i{
+    display: block;
+    float: left;
+    width: 2rem;
+    text-align: right;
+}
+.search  ul  li  label  input {
+    background: transparent;
+    display: inline-block;
+    height: .6rem;
+    line-height: .6rem;
+    width: 4rem;
+    font-family: "PingFangSC-Regular";
+    border: 1px solid #ddd;
+    border-radius: .05rem;
+    padding-left: .3rem;
+    margin-left: .3rem; }
+.search  ul  li  label  select {
+    background: transparent;
+    display: inline-block;
+    height: .6rem;
+    line-height: .6rem;
+    width: 4rem;
+    font-family: "PingFangSC-Regular";
+    border: 1px solid #ddd;
+    border-radius: .05rem;
+    padding-left: .3rem;
+    margin-left: .3rem; }
+
+
+.search  ul  li.address  label  select {
+    background: transparent;
+    display: inline-block;
+    height: .6rem;
+    line-height: .6rem;
+    width: 1.5rem;
+    font-family: "PingFangSC-Regular";
+    border: 1px solid #ddd;
+    border-radius: .05rem;padding-left: .3rem;
+    margin-left: .1rem; }
+
+.searchbtn{
+    width: 4rem;
+    height: .6rem;
+    border: none;
+    border-radius: .4rem;
+    background: #999999;
+    margin-left: 1.75rem;
+}
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="js/layui/css/layui.css">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+
+<div>
+    <ul class="header">
+        <li><a href="reglist.html">注册列表</a></li>
+        <li class="active"><a href="check.html">留言审核</a></li>
+        <li><a href="message.html">发布信息</a></li>
+    </ul>
+</div>
+
+<blockquote class="layui-elem-quote mylog-info-tit">
+    <!--按钮操作区域-->
+    <button data-method="offset" data-type="auto" id="shuaxin" class="layui-btn">刷新</button>
+    <button data-method="offset" data-type="auto" id="update" class="layui-btn layui-btn-normal">审核</button>
+</blockquote>
+<table id="list" lay-filter="test"></table>
+</body>
+
+<script type="text/html" id="titleTpl1">
+    {{#  if(d.status*1 == 6){ }}
+    <span>已录入</span>
+    {{#  } else { }}
+    <span style="color:red;">待录入</span>
+    {{#  } }}
+</script>
+<script src="../js/base/jquery.js?v=1.0.0"></script>
+<script src="../js/base/layer.js?v=1.0.0"></script>
+<script src="../js/base/base.js?v=1.0.0"></script>
+<script src="js/layui/layui.all.js"></script>
+<script src="js/check.js"></script>
+</html>

@@ -1,23 +1,42 @@
-.head{
-    height:2.2rem;
-    width:100%;
-    background: #649FF1;
-    position: relative;
-}
+
 .head>i{
-    width:0.5rem;
-    height:0.85rem;
+    width:0.35rem;
+    height:0.35rem;
     padding:0.3rem;
-    background: url(../../../style/images/Back_Chevron@2x.png) no-repeat;
-    background-size: 0.5rem 0.85rem;
+    background: url('../../app/images/fanhui.png') no-repeat;
+    background-size: 0.35rem 0.35rem;
     position: absolute;
-    left:0.57rem;
-    top:0.67rem;
+    left:0.2rem;
+    top:0.1rem;
 }
-.head>p{
-    height:2.2rem;
-    line-height: 2.2rem;
+
+
+
+.head {
+    height: .6rem;
+    width: 100%;
+    position: relative;
+    background: transparent;
+    border-bottom: 2px solid #ddd;
+}
+
+.head > p {
+    height: .6rem;
+    line-height: .6rem;
     text-align: center;
-    font-size: 0.85rem;
-    color: #fff;
+    font-size: .26rem;
+    font-family: "PingFangSC-Medium";
+    float: left;
+    width: 100%;
+}
+.head span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: right;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .26rem;
+    margin-right: .2rem;
+    cursor: pointer;
 }

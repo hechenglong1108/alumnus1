@@ -24,12 +24,13 @@
 </head>
 <body>
 <div id="login">
-    <div class="header">
+    <div class="head">
+        <i @click="goback"></i>
         <p>主页</p>
     </div>
     <ul class="Box">
         <li class="box">
-            <a href="">
+            <a href="contact.html">
                 <div>
                     <img src="images/lianxi.png" alt="">
                 </div>
@@ -66,7 +67,7 @@
         </li>
 
         <li class="box">
-            <a href="">
+            <a href="schoolliuyanban.html">
                 <div>
                     <img src="images/personliuyanban.png" alt="">
                 </div>
@@ -76,7 +77,7 @@
         </li>
 
         <li class="box">
-            <a href="">
+            <a href="search.html">
                 <div>
                     <img src="images/sousuo.png" alt="">
                 </div>
@@ -90,4 +91,17 @@
 </body>
 <!-- inject:js -->
 <!-- endinject -->
+<script>
+    var login=new Vue({
+        el:"#login",
+        data:{
+            classList:[]
+        },
+        methods:{
+            goback: function(){
+                history.go(-1)
+            }
+        }
+    })
+</script>
 </html>

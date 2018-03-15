@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <!-- inject:css -->
+    <!-- endinject -->
+    <script src="../js/base/adapter.js"></script>
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+<div id="search">
+    <div class="head">
+        <i @click="goback"></i>
+        <p>查询</p>
+    </div>
+
+    <div class="search" >
+        <ul>
+            <form action="" id="registerfrom">
+
+                <li>
+                    <label for="">
+                        <i>毕业年份:</i>
+                        <select name="" id="" v-model="years">
+                            <option value="2017">2017</option>
+                            <option value="2017">2017</option>
+                            <option value="2017">2017</option>
+                            <option value="2017">2017</option>
+                        </select>
+                    </label>
+                </li>
+                <li class="address">
+                    <label for="">
+                        <i>所在地区:</i>
+                        <select name="" v-model="province" @change="getCity">
+                            <option value="">请选择</option>
+                        </select>
+                        <select name="" v-model="city">
+                            <option value="">请选择</option>
+
+                        </select>
+                        <select name="" v-model="area">
+                            <option value="">请选择</option>
+                        </select>
+                    </label>
+                </li>
+            </form>
+
+        </ul>
+
+        <button class="searchbtn" @click="search">查询</button>
+    </div>
+
+
+    <ul class="Box">
+        <li class="reg students">
+            <h5><span>张三</span><span>手机号码：1789999999</span></h5>
+
+            <p>所在地区<span>浙江省杭州市西湖区京西北缘4栋2207</span></p>
+            <p>单位：<span>杭州任润科技股份有限公司</span>职务：<span>前端工程师</span></p>
+
+
+        </li>
+        <li class="noreg students">
+            <h5><span>张三</span><span>手机号码：1789999999</span></h5>
+
+            <p>所在地区<span>浙江省杭州市西湖区京西北缘4栋2207</span></p>
+            <p>单位：<span>杭州任润科技股份有限公司</span>  职务：<span>前端工程师</span></p>
+        </li>
+    </ul>
+</div>
+</div>
+</body>
+<!-- inject:js -->
+<!-- endinject -->
+<script src="js/search.js"></script>
+</html>

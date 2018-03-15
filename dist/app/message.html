@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../js/base/head.css?v=1.0.0">
+    <link rel="stylesheet" href="../js/base/reset.css?v=1.0.0">
+    <!-- endinject -->
+    <script src="../js/base/adapter.js"></script>
+    <link rel="stylesheet" href="css/message.css">
+    <link rel="stylesheet" href="css/dropload.css">
+</head>
+<body>
+<div id="message">
+    <div class="head">
+        <i @click="goback"></i>
+        <p>留言板</p>
+    </div>
+    <div v-show="type != 2" style="display: none">
+        <textarea name="" id="" cols="30" rows="5" class="texts" placeholder="请输入内容..." v-model="messagecontent"></textarea>
+
+        <button class="release" @click="release">发布</button>
+    </div>
+
+    <div class="commentbox" v-show="ispinglun"style="display: none" >
+        <div class="pinglun">
+            <textarea name=""  cols="30" rows="3" class="pingluntexts" placeholder="请输入内容..." v-model="pingluncontent"></textarea>
+            <button class="pinglunbtn deletepinglun" @click="deletepinglun">取消</button>
+            <button class="pinglunbtn releasepinglun" @click="releasepinglun">发布</button>
+        </div>
+    </div>
+    <div class="list">
+        <ul class="Box">
+            <li class="box">
+                <div class="headPortrait">
+                    <img src="images/timg.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h5 style="color: #40AFFE">里斯</h5>
+                    <p class="text">今天是9月1日，我们开学啦！也许你对暑假还恋恋不舍，也许你早就期盼新学期的到来，不管怎么说，新的学期已经来了。步入开学季，大家都在忙些什么呢？ 开学装备买买买 ，不少家长认为，以一个崭新的姿态面对同学和老师，很有必要。于是，为了有一套富有仪式感的新学期“装备”，他们也是提前就卯足了劲儿。</p>
+
+                    <p class="time"><span>2017.09.23</span><i @click="showpinglun"></i></p>
+
+                    <div class="comment">
+                        <div class="commentheadPortrait">
+                            <img src="images/timg.jpeg" alt="">
+                        </div>
+                        <div class="comment_content">
+                            <span style="color: #40AFFE">张三：</span><span>非常好呀，我非常喜欢呢，</span>
+                            <p>2017.09.23 10:23</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="commentheadPortrait">
+                            <img src="images/timg.jpeg" alt="">
+                        </div>
+                        <div class="comment_content">
+                            <span style="color: #40AFFE">张三：</span><span>非常好呀，我非常喜欢呢，</span>
+                            <p>2017.09.23 10:23</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+</div>
+</body>
+<!-- inject:js -->
+<script src="../js/base/jquery.js?v=1.0.0"></script>
+<script src="../js/base/layer.js?v=1.0.0"></script>
+<script src="../js/base/vue.js?v=1.0.0"></script>
+<script src="../js/base/base.js?v=1.0.0"></script>
+<!-- endinject -->
+<script src="js/dropload.js"></script>
+<script src="js/message.js"></script>
+</html>

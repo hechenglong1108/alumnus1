@@ -1,0 +1,173 @@
+
+.header {
+    height: .6rem;
+    width: 100%;
+    position: relative;
+    background: transparent;
+    border-bottom: 2px solid #ddd;
+}
+
+.header > p {
+    height: .6rem;
+    line-height: .6rem;
+    text-align: center;
+    font-size: .26rem;
+    font-family: "PingFangSC-Medium";
+    float: left;
+    width: 100%;
+}
+.header span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: right;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .26rem;
+    margin-right: .2rem;
+    cursor: pointer;
+}
+
+.box{
+    overflow: hidden;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #ddd;
+}
+.headPortrait{
+    float: left;
+    width: 1rem;
+    height: 1rem;
+    overflow: hidden;
+    margin-left: .3rem;
+    border-radius: 100%;
+    margin-right: .3rem;
+}
+.headPortrait img{
+    width: 100%;
+}
+.content{
+    float: left;
+    font-size: .24rem;
+}
+
+.content p{
+    width: 5.5rem;
+
+}
+.Img{
+    width: 4rem;
+    overflow: hidden;
+    margin-top: .2rem;
+}
+.imgbox{
+    float: left;
+    width: 1.5rem;
+    height: 1.5rem;
+    overflow: hidden;
+    margin-left: .2rem;
+    margin-bottom: .2rem;
+}
+.imgbox img{
+    width: 100%;
+}
+.time{
+    overflow: hidden;
+}
+.time span{
+    float: left;
+}
+.time i{
+    display: block;
+    float: right;
+    width: .4rem;
+    height: .4rem;
+    background: url("../images/pinglun.png") no-repeat;
+    background-size: 100%;
+}
+.comment{
+    background: #F6F6F6;
+    overflow: hidden;
+    padding: .1rem;
+    margin-top: .2rem;
+    border-bottom: 1px dotted #ddd;
+}
+.commentheadPortrait{
+    float: left;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-top: .1rem;
+    margin-left: .1rem;
+    margin-right: .1rem;
+}
+.commentheadPortrait>img{
+    width: 100%;
+}
+.comment>span{
+    float: left;
+    margin-top: .1rem;
+}
+.comment_content{
+    float: left;
+    width: 4.5rem;
+}
+
+.texts{
+    width: 6.5rem;
+    padding: .3rem .3rem 0 .3rem;
+    margin-top: .3rem;
+    margin-left: .2rem;
+    border: 1px solid #F2F2F2;
+    border-radius: 5px;
+}
+.release{
+    width: 3rem;
+    height: .5rem;
+    line-height: .5rem;
+    background: #40AFFE;
+    border:none;
+    margin-left: 2rem;
+    color: #fff;
+    border-radius: .3rem;
+}
+
+
+.commentbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+.pinglun{
+    width: 6rem;
+    height: 4rem;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 2rem;
+    margin-left: .7rem;
+}
+.pingluntexts{
+    width: 5rem;
+    padding: .3rem .3rem 0 .3rem;
+    margin-top: .3rem;
+    margin-left: .2rem;
+    border: 1px solid #F2F2F2;
+    border-radius: 5px;
+}
+.pinglunbtn{
+    width: 1.5rem;
+    height: .5rem;
+    line-height: .5rem;
+    background: #40AFFE;
+    border: none;
+    border-radius: .3rem;
+    color: #fff;
+    margin-left: .8rem;
+}
+.deletepinglun{
+    background: #999999;
+}

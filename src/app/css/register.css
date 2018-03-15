@@ -74,6 +74,11 @@
     border-radius: .4rem;
     background: #999999;
     margin-left: 1.75rem;
-   margin-bottom: 4rem;
 
+
+}
+.gologin{
+    margin-bottom: 4rem;
+    font-size: .25rem;
+    color: #c2c2c2;
 }

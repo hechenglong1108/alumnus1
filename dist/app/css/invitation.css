@@ -1,0 +1,41 @@
+.header {
+    height: .6rem;
+    width: 100%;
+    position: relative;
+    background: transparent;
+    border-bottom: 2px solid #ddd;
+}
+
+.header > p {
+    height: .6rem;
+    line-height: .6rem;
+    text-align: center;
+    font-size: .26rem;
+    font-family: "PingFangSC-Medium";
+}
+.content{
+    font-size: .24rem;
+    margin-top: 1rem;
+}
+.content span{
+    margin-left: .3rem;
+}
+.content input  {
+    width: 5rem;
+    margin-left: .2rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: .1rem .2rem;
+}
+
+.copy{
+    width: 3rem;
+    height: .5rem;
+    line-height: .5rem;
+    background: #40AFFE;
+    border: none;
+    border-radius: .3rem;
+    color: #fff;
+    margin-left: 2rem;
+
+}

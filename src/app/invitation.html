@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <!-- inject:css -->
+    <!-- endinject -->
+    <script src="../js/base/adapter.js"></script>
+    <link rel="stylesheet" href="css/invitation.css">
+    <style>
+        .Box{
+            height: 10rem;
+        }
+    </style>
+</head>
+<body>
+<div id="invitation">
+    <div class="head">
+        <i @click="goback"></i>
+        <p>邀请链接</p>
+    </div>
+    <div class="content">
+        <span>邀请链接</span><input class="lianjie" type="text" disabled="disabled" value="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAxODE2MjM1MA==&scene=124&#wechat_redirect">
+    </div>
+    <button class="copy" @click="copy">复制链接</button>
+</div>
+</div>
+</body>
+<!-- inject:js -->
+<!-- endinject -->
+<script>
+    var invitation=new Vue({
+        el:"#invitation",
+        data:{
+
+        },
+        methods:{
+            goback: function(){
+                history.go(-1)
+            },
+            copy: function(){
+                var obj = $(".lianjie")[0];
+                obj.select();
+                document.execCommand("Copy")
+                Base.Messager.open("复制成功")
+            }
+        }
+    })
+</script>
+</html>
