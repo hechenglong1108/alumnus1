@@ -92,15 +92,36 @@ var login=new Vue({
                 dataType: 'json',
                 success: function (json) {
                     if (json.code * 1 == 1) {
-                        Base.Messager.open("注册成功")
-                        setTimeout(function(){
-                            alert(1)
-                        },2000)
+                        Base.Messager.loading("注册成功,正在登录")
+                        _inThis.login();
                     } else {
-
+                        Base.Messager.open(json.message)
                     }
 
 
+                }
+            })
+        },
+
+        login:function(){
+            var _inThis  = this;
+            Base.loadJson({
+                url:"/api/wns/admin/login",
+                type:"post",
+                data:{
+                    un: _inThis.mobile,
+                    pass: _inThis.idetify
+                }
+            },function(json){
+                if(json.code*1 == 1){
+                    Base.Messager.hideLoading();
+                    location.href = 'index.html'
+                    /*Base.Messager.open("登录成功")
+                    setTimeout(function(){
+                        location.href = 'index.html'
+                    },2000)*/
+                }else{
+                    Base.Messager.open(json.message)
                 }
             })
         },
