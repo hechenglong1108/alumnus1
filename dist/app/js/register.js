@@ -72,7 +72,7 @@ var login=new Vue({
                 Base.Messager.open("请输入手机号码")
                 return;
             }
-            if($("#headerss").val()){
+            if(!$("#headerss").val()){
                 Base.Messager.open("请选择头像")
                 return;
             }
