@@ -11,7 +11,7 @@ var message=new Vue({
         messageList:[],/*留言列表*/
         type:Base.getparm("type") || 1,/*1:班级留言板；2：我的留言板；3：站内留言板-人才招聘；4：站内留言板-技术咨询；5：站内留言板-其他*/
         ispinglun:0,
-        page:0,
+        page:1,
         size:10
     },
     methods:{
