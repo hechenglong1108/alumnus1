@@ -26,7 +26,7 @@
         <i @click="goback"></i>
         <p>留言板</p>
     </div>
-    <div v-show="type != 2" style="display: none;border-bottom: 2px solid #ddd;padding-bottom: 1rem">
+    <div v-show="type != 2" style="display: none;border-bottom: 2px solid #ddd;padding-bottom: 1rem;box-shadow: 2px 2px 2px #ddd">
         <textarea name="" id="" cols="30" rows="5" class="texts" placeholder="请输入内容..." v-model="messagecontent"></textarea>
 
         <button class="release" @click="release">发布</button>
