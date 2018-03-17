@@ -58,12 +58,10 @@
                         <label for="">
                             <i>班级:</i>
                             <select name="" v-model="banji">
-                                <select name="" id="cl" v-model="years" @change="getclass">
                                     <option value="">请选择</option>
                                     <template v-for="item in classList">
                                         <option :value="item.cid" >{{item.name}}</option>
                                     </template>
-                                </select>
                             </select>
                         </label>
                     </li>
