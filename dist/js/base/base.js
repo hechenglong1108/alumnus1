@@ -6,23 +6,21 @@ var Base = {
     /*判断是否登录*/
     judgelogin:function(_url){
         var _inThis=this;
-        if(location.pathname.indexOf("login") == -1 && location.pathname.indexOf("register") == -1 && location.pathname.indexOf("forget_pwd") == -1 && location.pathname.indexOf("index") == -1){
-            Base.loadJsonNoAsync({
-                url:"/api/wns/admin/login",
-                type:"get",
-            },function(json){
-                if(json.code*1 == 1){
-                    _inThis.islogin=true;
-                }else{
-                    _inThis.islogin=false;
-                    Base.Messager.open("系统检测到您未登录，请登录");
-                    setTimeout(function(){
-                        location.href = _url
-                    },2000)
-                    return;
-                }
-            })
-        }
+        Base.loadJsonNoAsync({
+            url:"/api/wns/admin/login",
+            type:"get",
+        },function(json){
+            if(json.code*1 == 1){
+                _inThis.islogin=true;
+            }else{
+                _inThis.islogin=false;
+                Base.Messager.open("系统检测到您未登录，请登录");
+                setTimeout(function(){
+                    location.href = _url
+                },2000)
+                return;
+            }
+        })
     },
 
     /*获取url*/
