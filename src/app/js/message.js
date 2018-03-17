@@ -24,14 +24,18 @@ var message=new Vue({
             var _type = 1
             if(_inThis.type*1 == 1){
                 _type = 4
-            }else if(_inThis.type*1 == 2){
-                _type = 1
             } else if(_inThis.type*1 == 3){
                 _type = 2
             } else if(_inThis.type*1 == 4){
                 _type = 3
             } else if(_inThis.type*1 == 3){
                 _type = 1
+            }
+
+
+            var _url ='/api/dop/topics/page?checkStatus=2&type=' + _type + "&page=" +_inThis.page+'&size='+_inThis.size;
+            if(_inThis.type*1 == 2){
+                _url ='/api/dop/topics/page?checkStatus=2&uid=' + Base.getCookies("uid") + "&page=" +_inThis.page+'&size='+_inThis.size;
             }
             // dropload
             $('.list').dropload({
@@ -42,7 +46,7 @@ var message=new Vue({
                     var result = '';
                     $.ajax({
                         type: 'GET',
-                        url: '/api/dop/topics/page?type=' + _type + "&page=" +_inThis.page+'&size='+_inThis.size,
+                        url: _url,
                         dataType: 'json',
                         success: function(data){
                             var arrLen = data.rows.length;
