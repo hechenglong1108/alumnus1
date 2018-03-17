@@ -31,7 +31,7 @@ var classs=new Vue({
                         success: function(data){
                             var arrLen = data.length;
                             if(arrLen > 0){
-                                _inThis.className = data.rows[]
+                               /* _inThis.className = data.rows[]*/
                                 /*_inThis.classList = data.rows;*/
 
                                 /*for(var i=0; i<arrLen; i++){
