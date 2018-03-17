@@ -50,8 +50,10 @@ var classs=new Vue({
                                 $(".dropload-down>div").remove();
                                 $(".dropload-down").append(me.opts.domDown.domNoData);
                             }
+                            for(var i=0;i<data.rows.length;i++){
+                                _inThis.classList.push( data.rows[i]);
+                            }
 
-                            _inThis.classList.push( data.rows);
                             _inThis.className = _inThis.classList[0].className
 
                             // 插入数据到页面，放到最后面
