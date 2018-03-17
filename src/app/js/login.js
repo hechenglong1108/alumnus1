@@ -21,7 +21,7 @@ var login=new Vue({
                 return;
             }
             Base.loadJson({
-                url:"/api/wns/admin/logi",
+                url:"/api/wns/admin/login",
                 type:"post",
                 data:{
                     un: _inThis.name,
