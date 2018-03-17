@@ -100,7 +100,7 @@ var login=new Vue({
         getProvince: function(){
             var _inThis = this;
             Base.loadJson({
-                url:"/api/dop/region/search",
+                url:"/api/dop/region/search?page=1&size=1000",
                 type:"get"
             },function(json){
                 if(json.code*1 == 1 ){
@@ -114,7 +114,7 @@ var login=new Vue({
         getCity: function(){
             var _inThis = this;
             Base.loadJson({
-                url:"/api/dop/region/search",
+                url:"/api/dop/region/search?page=1&size=1000",
                 data:{
                     parentId:_inThis.province
                 },
@@ -131,7 +131,7 @@ var login=new Vue({
         getArea: function(){
             var _inThis = this;
             Base.loadJson({
-                url:"/api/dop/region/search",
+                url:"/api/dop/region/search?page=1&size=1000",
                 data:{
                     parentId:_inThis.city
                 },
