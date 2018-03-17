@@ -33,17 +33,16 @@ var message=new Vue({
             }
 
 
-            var _url ='/api/dop/topics/page?checkStatus=2&type=' + _type + "&page=" +_inThis.page+'&size='+_inThis.size;
-            if(_inThis.type*1 == 2){
-                _url ='/api/dop/topics/page?checkStatus=2&uid=' + Base.getCookies("uid") + "&page=" +_inThis.page+'&size='+_inThis.size;
-            }
             // dropload
             $('.list').dropload({
                 scrollArea : window,
                 loadDownFn : function(me){
                     _inThis.page++;
                     // 拼接HTML
-                    var result = '';
+                    var _url ='/api/dop/topics/page?checkStatus=2&type=' + _type + "&page=" +_inThis.page+'&size='+_inThis.size;
+                    if(_inThis.type*1 == 2){
+                        _url ='/api/dop/topics/page?checkStatus=2&uid=' + Base.getCookies("uid") + "&page=" +_inThis.page+'&size='+_inThis.size;
+                    }
                     $.ajax({
                         type: 'GET',
                         url: _url,
