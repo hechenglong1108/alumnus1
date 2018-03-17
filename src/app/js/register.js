@@ -110,6 +110,40 @@ var login=new Vue({
                 }
             })
         },
+        /*获取城市*/
+        getCity: function(){
+            var _inThis = this;
+            Base.loadJson({
+                url:"/api/dop/region/search",
+                data:{
+                    parentId:_inThis.province
+                },
+                type:"get"
+            },function(json){
+                if(json.code*1 == 1 ){
+                    _inThis.cityList = json.rows;
+                }else{
+                    console.log(json.message)
+                }
+            })
+        },
+        /*获取区*/
+        getArea: function(){
+            var _inThis = this;
+            Base.loadJson({
+                url:"/api/dop/region/search",
+                data:{
+                    parentId:_inThis.city
+                },
+                type:"get"
+            },function(json){
+                if(json.code*1 == 1 ){
+                    _inThis.areaList = json.rows;
+                }else{
+                    console.log(json.message)
+                }
+            })
+        },
         /*获取毕业年份*/
         getYear: function() {
             var _inThis = this;

@@ -72,15 +72,21 @@
                             <select name="" v-model="province" @change="getCity">
                                 <option value="">请选择</option>
                                 <template v-for="item in provinceList">
-                                    <option :value="item.cid" >{{item.name}}</option>
+                                    <option :value="item.regionId" >{{item.regionName}}</option>
                                 </template>
                             </select>
-                            <select name="" v-model="city">
+                            <select name="" v-model="city" @change="getArea">
                                 <option value="">请选择</option>
+                                <template v-for="item in cityList">
+                                    <option :value="item.regionId" >{{item.regionName}}</option>
+                                </template>
 
                             </select>
                             <select name="" v-model="area">
                                 <option value="">请选择</option>
+                                <template v-for="item in areaList">
+                                    <option :value="item.regionId" >{{item.regionName}}</option>
+                                </template>
                             </select>
                         </label>
                     </li>
