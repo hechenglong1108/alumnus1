@@ -20,7 +20,10 @@ var login=new Vue({
         mobile:"",
         heads:"",
         yearList:[],/*届数组*/
-        classList:[]/*班级数组*/
+        classList:[],/*班级数组*/
+        provinceList:[],/*省份数组*/
+        cityList:[],/*城市数组*/
+        areaList:[]/*区数组*/
     },
     methods:{
         reg: function(){
@@ -93,8 +96,19 @@ var login=new Vue({
                 }
             })
         },
+        /*获取省份*/
         getProvince: function(){
-
+            var _inThis = this;
+            Base.loadJson({
+                url:"/api/dop/region/search",
+                type:"get"
+            },function(json){
+                if(json.code*1 == 1 ){
+                    _inThis.provinceList = json.rows;
+                }else{
+                    console.log(json.message)
+                }
+            })
         },
         /*获取毕业年份*/
         getYear: function() {
@@ -134,6 +148,7 @@ var login=new Vue({
     },
     created(){
         this.getYear()
+        this.getProvince()
     }
 })
 

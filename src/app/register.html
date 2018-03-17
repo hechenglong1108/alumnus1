@@ -69,6 +69,9 @@
                             <i>所在地区:</i>
                             <select name="" v-model="province" @change="getCity">
                                 <option value="">请选择</option>
+                                <template v-for="item in provinceList">
+                                    <option :value="item.cid" >{{item.name}}</option>
+                                </template>
                             </select>
                             <select name="" v-model="city">
                                 <option value="">请选择</option>
