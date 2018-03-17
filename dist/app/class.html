@@ -24,16 +24,16 @@
 <div id="classs">
     <div class="head">
         <i @click="goback"></i>
-        <p>网络3141</p>
+        <p v-cloak>{{className}}</p>
     </div>
     <div class="list">
         <ul class="Box">
             <template v-for="item in classList">
                 <li class="reg students" :class="{'reg students':item.activationStatus*1 == 1,'noreg students':item.activationStatus*1 == 2}">
-                    <h5><span>{{item.trueName}}</span><span>手机号码：{{item.mobile}}</span></h5>
+                    <h5 v-cloak><span>{{item.trueName}}</span><span>手机号码：{{item.mobile}}</span></h5>
 
-                    <p>所在地区<span>{{item.personProvinceName}}{{item.personCityName}}{{item.personAreaName}}{{item.personAddr}}</span></p>
-                    <p>单位：<span>{{item.company}}</span>职务：<span>{{item.department}}</span></p>
+                    <p v-cloak>所在地区<span>{{item.personProvinceName}}{{item.personCityName}}{{item.personAreaName}}{{item.personAddr}}</span></p>
+                    <p v-cloak>单位：<span>{{item.company}}</span>职务：<span>{{item.department}}</span></p>
                 </li>
             </template>
 

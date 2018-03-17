@@ -8,7 +8,7 @@ var classs=new Vue({
         classList:[],
         page:0,
         size:10,
-        className:''
+        className:'---'
     },
     methods:{
         goback: function(){
