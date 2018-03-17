@@ -23,7 +23,7 @@ var message=new Vue({
             var _inThis = this;
             var _type = 1
             if(_inThis.type*1 == 1){
-                _type = 1
+                _type = 4
             }else if(_inThis.type*1 == 2){
                 _type = 1
             } else if(_inThis.type*1 == 3){
@@ -116,7 +116,7 @@ var message=new Vue({
             var _inThis = this;
             var _type = 1
             if(_inThis.type*1 == 1){
-                _type = 1
+                _type = 4
             }else if(_inThis.type*1 == 2){
                 _type = 1
             } else if(_inThis.type*1 == 3){
@@ -148,7 +148,7 @@ var message=new Vue({
         }
     },
     created(){
-        /*Base.judgelogin("login.html")*/
+        Base.judgelogin("login.html")
         this.getMessage()
     }
 })
