@@ -29,7 +29,7 @@ var classs=new Vue({
                         url: '/api/dop/self/alumnu/list?page='+_inThis.page+'&size='+_inThis.size,
                         dataType: 'json',
                         success: function(data){
-                            var arrLen = data.length;
+                            var arrLen = data.rows.length;
                             if(arrLen > 0){
                                /* _inThis.className = data.rows[]*/
                                 /*_inThis.classList = data.rows;*/
