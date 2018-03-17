@@ -102,7 +102,7 @@ var login=new Vue({
             Base.loadJson({
                 url:"/api/dop/region/search?page=1&size=1000",
                 data:{
-                    parentId:0
+                    parentId:1
                 },
                 type:"get"
             },function(json){
