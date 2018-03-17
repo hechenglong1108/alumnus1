@@ -143,7 +143,7 @@ var message=new Vue({
             },function(json){
                 if(json.code*1 == 1){
                     Base.Messager.open("发布成功");
-                    _inThis.getMessage()
+                    /*_inThis.getMessage()*/
                 }else{
                     Base.Messager.open(json.message);
                 }
