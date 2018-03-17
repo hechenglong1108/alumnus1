@@ -19,6 +19,7 @@ var login=new Vue({
         post:"",
         mobile:"",
         heads:"",
+        isuser:0,/*是否通过身份验证*/
         yearList:[],/*届数组*/
         classList:[],/*班级数组*/
         provinceList:[],/*省份数组*/
@@ -76,7 +77,8 @@ var login=new Vue({
                 Base.Messager.open("请选择头像")
                 return;
             }
-            if(!_inThis.checkUser()){
+            _inThis.checkUser()
+            if(!_inThis.isuser){
                 return "身份信息不匹配，请检查姓名或者身份证后六位是否输入错误！"
             }
 
@@ -116,9 +118,9 @@ var login=new Vue({
             },function(json){
 
                 if(json.code*1 == 1 ){
-                    return 1
+                    _inThis.isuser = 1
                 }else{
-                    return 0
+                    _inThis.isuser = 0
                 }
             })
         },
