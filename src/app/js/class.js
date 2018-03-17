@@ -6,7 +6,7 @@ var classs=new Vue({
     el:"#classs",
     data:{
         classList:[],
-        page:1,
+        page:0,
         size:10,
         className:'---'
     },
