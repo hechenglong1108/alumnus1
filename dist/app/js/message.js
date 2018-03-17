@@ -91,6 +91,7 @@ var message=new Vue({
         /*发布评论*/
         releasepinglun: function() {
             var _inThis = this;
+
             if(!this.pingluncontent){
                 Base.Messager.open("请输入评论内容")
                 return;
@@ -109,20 +110,40 @@ var message=new Vue({
         showpinglun: function() {
             this.ispinglun = 1
         },
+
+        /*发布话题*/
         release: function(){
             var _inThis = this;
+            var _type = 1
+            if(_inThis.type*1 == 1){
+                _type = 1
+            }else if(_inThis.type*1 == 2){
+                _type = 1
+            } else if(_inThis.type*1 == 3){
+                _type = 2
+            } else if(_inThis.type*1 == 4){
+                _type = 3
+            } else if(_inThis.type*1 == 3){
+                _type = 1
+            }
             if(!this.messagecontent){
                 Base.Messager.open("请输入留言内容")
                 return;
             }
             Base.loadJson({
-                url:"",
-                type:"",
+                url:"/api/dop/topics/add",
+                type:"post",
                 data:{
-
+                    topics:_inThis.messagecontent,
+                    type:_type
                 }
             },function(json){
-
+                if(json.code*1 == 1){
+                    Base.Messager.open("发布成功");
+                    _inThis.getMessage()
+                }else{
+                    Base.Messager.open(json.message);
+                }
             })
         }
     },

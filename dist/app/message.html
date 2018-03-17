@@ -41,36 +41,38 @@
     </div>
     <div class="list">
         <ul class="Box">
-            <li class="box">
-                <div class="headPortrait">
-                    <img src="images/timg.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h5 style="color: #40AFFE">里斯</h5>
-                    <p class="text">今天是9月1日，我们开学啦！也许你对暑假还恋恋不舍，也许你早就期盼新学期的到来，不管怎么说，新的学期已经来了。步入开学季，大家都在忙些什么呢？ 开学装备买买买 ，不少家长认为，以一个崭新的姿态面对同学和老师，很有必要。于是，为了有一套富有仪式感的新学期“装备”，他们也是提前就卯足了劲儿。</p>
+            <template v-for="item in messageList">
+                <li class="box">
+                    <div class="headPortrait">
+                        <img src="images/timg.jpeg" alt="">
+                    </div>
+                    <div class="content">
+                        <h5 style="color: #40AFFE" v-cloak>{{item.addTrueName}}</h5>
+                        <p class="text" v-cloak>{{item.topics}}</p>
 
-                    <p class="time"><span>2017.09.23</span><i @click="showpinglun"></i></p>
+                        <p class="time"><span v-cloak>{{item.addTime}}</span><i @click="showpinglun"></i></p>
 
-                    <div class="comment">
-                        <div class="commentheadPortrait">
-                            <img src="images/timg.jpeg" alt="">
+                        <div class="comment">
+                            <div class="commentheadPortrait">
+                                <img src="images/timg.jpeg" alt="">
+                            </div>
+                            <div class="comment_content">
+                                <span style="color: #40AFFE">张三：</span><span>非常好呀，我非常喜欢呢，</span>
+                                <p>2017.09.23 10:23</p>
+                            </div>
                         </div>
-                        <div class="comment_content">
-                            <span style="color: #40AFFE">张三：</span><span>非常好呀，我非常喜欢呢，</span>
-                            <p>2017.09.23 10:23</p>
+                        <div class="comment">
+                            <div class="commentheadPortrait">
+                                <img src="images/timg.jpeg" alt="">
+                            </div>
+                            <div class="comment_content">
+                                <span style="color: #40AFFE">张三：</span><span>非常好呀，我非常喜欢呢，</span>
+                                <p>2017.09.23 10:23</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="comment">
-                        <div class="commentheadPortrait">
-                            <img src="images/timg.jpeg" alt="">
-                        </div>
-                        <div class="comment_content">
-                            <span style="color: #40AFFE">张三：</span><span>非常好呀，我非常喜欢呢，</span>
-                            <p>2017.09.23 10:23</p>
-                        </div>
-                    </div>
-                </div>
-            </li>
+                </li>
+            </template>
         </ul>
     </div>
 
