@@ -45,7 +45,7 @@
                 domClass   : 'dropload-down',
                 domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
                 domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
-                domNoData  : '<div class="dropload-noData">亲，没啦！！！</div>'
+                domNoData  : '<div class="dropload-noData">亲，暂时没有啰！</div>'
             },
             autoLoad : true,                                                     // 自动加载
             distance : 50,                                                       // 拉动距离
