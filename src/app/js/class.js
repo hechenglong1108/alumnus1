@@ -67,7 +67,9 @@ var classs=new Vue({
 
     },
     created(){
+        Base.judgelogin("login.html")
         this.getList()
+
     }
 })
 

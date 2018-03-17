@@ -21,6 +21,9 @@ var search=new Vue({
             },function(json){
 
             })
+        },
+        created(){
+            Base.judgelogin("login.html")
         }
     }
 })

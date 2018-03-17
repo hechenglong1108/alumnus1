@@ -18,7 +18,9 @@ var login=new Vue({
         department:"",
         post:"",
         mobile:"",
-        heads:""
+        heads:"",
+        yearList:[],/*届数组*/
+        classList:[]/*班级数组*/
     },
     methods:{
         reg: function(){
@@ -91,12 +93,31 @@ var login=new Vue({
                 }
             })
         },
-        getProvince:function(){
+        getProvince: function(){
+
+        },
+        getYear: function() {
+            var _inThis = this;
+            Base.loadJson({
+                url:"/api/wns/user/company/list",
+                data:{
+                    type:2
+                },
+                type:"get"
+            },function(json){
+                if(json.code*1 == 1 ){
+                    _inThis.yearList = json.rows;
+                }else{
+                    console.log(json.message)
+                }
+            })
+        },
+        getclass: function() {
 
         }
     },
     created(){
-
+        this.getYear()
     }
 })
 

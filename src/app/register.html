@@ -44,10 +44,10 @@
                         <label for="">
                             <i>毕业年份:</i>
                             <select name="" id="" v-model="years">
-                                <option value="2017">2017</option>
-                                <option value="2017">2017</option>
-                                <option value="2017">2017</option>
-                                <option value="2017">2017</option>
+                                <option value="">请选择</option>
+                                <template v-for="item in yearList">
+                                    <option :value="item.cid" >{{item.name}}</option>
+                                </template>
                             </select>
                         </label>
                     </li>
