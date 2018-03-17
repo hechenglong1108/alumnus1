@@ -21,6 +21,18 @@ var message=new Vue({
         /*获取列表*/
         getMessage: function() {
             var _inThis = this;
+            var _type = 1
+            if(_inThis.type*1 == 1){
+                _type = 1
+            }else if(_inThis.type*1 == 2){
+                _type = 1
+            } else if(_inThis.type*1 == 3){
+                _type = 2
+            } else if(_inThis.type*1 == 4){
+                _type = 3
+            } else if(_inThis.type*1 == 3){
+                _type = 1
+            }
             // dropload
             $('.list').dropload({
                 scrollArea : window,
@@ -30,18 +42,18 @@ var message=new Vue({
                     var result = '';
                     $.ajax({
                         type: 'GET',
-                        url: 'http://ons.me/tools/dropload/json.php?page='+_inThis.page+'&size='+_inThis.size,
+                        url: '/api/dop/topics/page?type=' + _type + "&page=" +_inThis.page+'&size='+_inThis.size,
                         dataType: 'json',
                         success: function(data){
-                            var arrLen = data.length;
+                            var arrLen = data.rows.length;
                             if(arrLen > 0){
-                                for(var i=0; i<arrLen; i++){
+                                /*for(var i=0; i<arrLen; i++){
                                     result +=   '<a class="item opacity" href="'+data[i].link+'">'
                                         +'<img src="'+data[i].pic+'" alt="">'
                                         +'<h3>'+data[i].title+'</h3>'
                                         +'<span class="date">'+data[i].date+'</span>'
                                         +'</a>';
-                                }
+                                }*/
                                 // 如果没有数据
                             }else{
                                 // 锁定
@@ -54,9 +66,12 @@ var message=new Vue({
 
                             // 插入数据到页面，放到最后面
 
+                            for(var i=0;i<data.rows.length;i++){
+                                _inThis.messageList.push( data.rows[i]);
+                            }
+                           /* _inThis.messageList.push()
 
-
-                            $('.lists').append(result);
+                            $('.lists').append(result);*/
                             // 每次数据插入，必须重置
                             me.resetload();
                         },

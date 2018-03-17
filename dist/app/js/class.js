@@ -60,7 +60,7 @@ var classs=new Vue({
 
 
 
-                            $('.lists').append(result);
+                            /*$('.lists').append(result);*/
                             // 每次数据插入，必须重置
                             me.resetload();
                         },

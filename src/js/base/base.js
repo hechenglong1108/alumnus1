@@ -32,32 +32,6 @@ var Base = {
         return null;
     },
 
-
-
-    /*
-     * 检验用户是否登录
-     * 直接从cookies内提取uid和sid
-     * return 登录则返回true 反之返回false
-     */
-    checkUserLogin: function () {
-        var that = this;
-        var uid = that.getCookies("uid"), sid = that.getCookies("sid");
-        var isLogin = false;
-        this.loadJsonNoAsync({
-            url: "/api/wns/checklogin",
-            type: "post",
-            data: {
-                uid: uid,
-                sid: sid
-            }
-        }, function (json) {
-            if (json.code * 1 == 1)
-            {
-                isLogin = true;
-            }
-        });
-        return isLogin;
-    },
     /**
      * 跳转到某个页面
      * @param url(string) 跳转页面链接
