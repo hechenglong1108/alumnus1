@@ -106,11 +106,12 @@ var login=new Vue({
                 },
                 type:"get"
             },function(json){
-                if(json.code*1 == 1 ){
+                _inThis.provinceList = json.rows;
+                /*if(json.code*1 == 1 ){
                     _inThis.provinceList = json.rows;
                 }else{
                     console.log(json.message)
-                }
+                }*/
             })
         },
         /*获取城市*/
@@ -123,11 +124,12 @@ var login=new Vue({
                 },
                 type:"get"
             },function(json){
-                if(json.code*1 == 1 ){
+                _inThis.cityList = json.rows;
+                /*if(json.code*1 == 1 ){
                     _inThis.cityList = json.rows;
                 }else{
                     console.log(json.message)
-                }
+                }*/
             })
         },
         /*获取区*/
@@ -140,11 +142,12 @@ var login=new Vue({
                 },
                 type:"get"
             },function(json){
-                if(json.code*1 == 1 ){
+                _inThis.areaList = json.rows;
+                /*if(json.code*1 == 1 ){
                     _inThis.areaList = json.rows;
                 }else{
                     console.log(json.message)
-                }
+                }*/
             })
         },
         /*获取毕业年份*/
