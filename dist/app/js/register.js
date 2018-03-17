@@ -96,6 +96,7 @@ var login=new Vue({
         getProvince: function(){
 
         },
+        /*获取毕业年份*/
         getYear: function() {
             var _inThis = this;
             Base.loadJson({
@@ -112,8 +113,23 @@ var login=new Vue({
                 }
             })
         },
+        /*根据毕业年份获取班级*/
         getclass: function() {
-
+            var _inThis = this;
+            Base.loadJson({
+                url:"/api/wns/user/company/list",
+                data:{
+                    type:3,
+                    cid:_inThis.years
+                },
+                type:"get"
+            },function(json){
+                if(json.code*1 == 1 ){
+                    _inThis.classList = json.rows;
+                }else{
+                    console.log(json.message)
+                }
+            })
         }
     },
     created(){
