@@ -127,7 +127,7 @@ var message=new Vue({
         }
     },
     created(){
-        Base.judgelogin("login.html")
+        /*Base.judgelogin("login.html")*/
         this.getMessage()
     }
 })
