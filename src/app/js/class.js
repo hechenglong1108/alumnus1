@@ -7,7 +7,8 @@ var classs=new Vue({
     data:{
         classList:[],
         page:0,
-        size:10
+        size:10,
+        className:''
     },
     methods:{
         goback: function(){
@@ -25,18 +26,21 @@ var classs=new Vue({
                     var result = '';
                     $.ajax({
                         type: 'GET',
-                        url: 'http://ons.me/tools/dropload/json.php?page='+_inThis.page+'&size='+_inThis.size,
+                        url: '/api/dop/self/alumnu/list?page='+_inThis.page+'&size='+_inThis.size,
                         dataType: 'json',
                         success: function(data){
                             var arrLen = data.length;
                             if(arrLen > 0){
-                                for(var i=0; i<arrLen; i++){
+                                _inThis.className = data.rows[]
+                                /*_inThis.classList = data.rows;*/
+
+                                /*for(var i=0; i<arrLen; i++){
                                     result +=   '<a class="item opacity" href="'+data[i].link+'">'
                                         +'<img src="'+data[i].pic+'" alt="">'
                                         +'<h3>'+data[i].title+'</h3>'
                                         +'<span class="date">'+data[i].date+'</span>'
                                         +'</a>';
-                                }
+                                }*/
                                 // 如果没有数据
                             }else{
                                 // 锁定
@@ -46,6 +50,9 @@ var classs=new Vue({
                                 $(".dropload-down>div").remove();
                                 $(".dropload-down").append(me.opts.domDown.domNoData);
                             }
+
+                            _inThis.classList.push( data.rows);
+                            _inThis.className = _inThis.classList[0].className
 
                             // 插入数据到页面，放到最后面
 
@@ -67,7 +74,7 @@ var classs=new Vue({
 
     },
     created(){
-        Base.judgelogin("login.html")
+        /*Base.judgelogin("login.html")*/
         this.getList()
 
     }

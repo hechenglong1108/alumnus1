@@ -26,20 +26,31 @@
     </div>
     <div class="list">
         <ul class="Box">
-            <li class="reg students">
+            <template v-for="item in classList">
+                <li class="reg students" :class="{'reg students':item.activationStatus*1 == 1,'noreg students':item.activationStatus*1 == 2}">
+                    <h5><span>{{item.trueName}}</span><span>手机号码：{{item.mobile}}</span></h5>
+
+                    <p>所在地区<span>{{item.personProvinceName}}{{item.personCityName}}{{item.personAreaName}}{{item.personAddr}}</span></p>
+                    <p>单位：<span>{{item.company}}</span>职务：<span>{{item.department}}</span></p>
+                </li>
+            </template>
+
+
+            <!--<li class="reg students" :class="{'reg students':item.activationStatus*1 == 1,'noreg students':item.activationStatus*1 == 2}">
                 <h5><span>张三</span><span>手机号码：1789999999</span></h5>
 
                 <p>所在地区<span>浙江省杭州市西湖区京西北缘4栋2207</span></p>
                 <p>单位：<span>杭州任润科技股份有限公司</span>职务：<span>前端工程师</span></p>
 
 
-            </li>
-            <li class="noreg students">
+            </li>-->
+
+            <!--<li class="noreg students">
                 <h5><span>张三</span><span>手机号码：1789999999</span></h5>
 
                 <p>所在地区<span>浙江省杭州市西湖区京西北缘4栋2207</span></p>
                 <p>单位：<span>杭州任润科技股份有限公司</span>  职务：<span>前端工程师</span></p>
-            </li>
+            </li>-->
         </ul>
     </div>
 
