@@ -51,4 +51,26 @@
 <script src="../js/base/vue.js?v=1.0.0"></script>
 <script src="../js/base/base.js?v=1.0.0"></script>
 <!-- endinject -->
+<script>
+    /**
+     * Created by hcl on 2018/3/14
+     */
+
+
+    var login=new Vue({
+        el:"#login",
+        data:{
+            name:"",
+            password:""
+        },
+        methods:{
+
+        },
+        created(){
+            Base.judgelogin("login.html")
+        }
+    })
+
+
+</script>
 </html>

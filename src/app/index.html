@@ -45,4 +45,26 @@
 </body>
 <!-- inject:js -->
 <!-- endinject -->
+<script>
+    /**
+     * Created by hcl on 2018/3/14
+     */
+
+
+    var login=new Vue({
+        el:"#login",
+        data:{
+            name:"",
+            password:""
+        },
+        methods:{
+
+        },
+        created(){
+            Base.judgelogin("login.html")
+        }
+    })
+
+
+</script>
 </html>

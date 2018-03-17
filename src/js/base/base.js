@@ -4,23 +4,20 @@ var Base = {
     _dataType: "web", //数据来源方式 目前考虑 webapp:嵌入APP运行、web：h5运行模式 默认web
     islogin: false,
     /*判断是否登录*/
-    judgelogin:function(){
+    judgelogin:function(_url){
         var _inThis=this;
         if(location.pathname.indexOf("login") == -1 && location.pathname.indexOf("register") == -1 && location.pathname.indexOf("forget_pwd") == -1 && location.pathname.indexOf("index") == -1){
             Base.loadJsonNoAsync({
-                url:"/index.php/Yueji/isLogin",
-                type:"POST",
-                data:{
-                    port:1
-                }
+                url:"/api/wns/admin/login",
+                type:"get",
             },function(json){
-                if(json.r){
+                if(json.code*1 == 1){
                     _inThis.islogin=true;
                 }else{
                     _inThis.islogin=false;
                     Base.Messager.open("系统检测到您未登录，请登录");
                     setTimeout(function(){
-                        location.href="login.html"
+                        location.href = _url
                     },2000)
                     return;
                 }
