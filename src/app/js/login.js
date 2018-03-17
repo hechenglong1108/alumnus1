@@ -24,10 +24,18 @@ var login=new Vue({
                 url:"",
                 type:"",
                 data:{
-
+                    un: _inThis.name,
+                    pass: _inThis.password
                 }
             },function(json){
-
+                if(json.code*1 == 1){
+                    Base.Messager.open("登录成功")
+                    setTimeout(function(){
+                        location.href = 'index.html'
+                    },2000)
+                }else{
+                    Base.Messager.open(json.message)
+                }
             })
         }
     }

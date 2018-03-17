@@ -2,11 +2,6 @@
  * Created by hcl on 2018/3/15
  */
 
-/**
- * Created by hcl on 2018/3/15
- */
-
-
 var check = {
     init: function(){
         this.addevent();
