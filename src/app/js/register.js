@@ -72,14 +72,17 @@ var login=new Vue({
                 Base.Messager.open("请输入手机号码")
                 return;
             }
-            if(!this.heads){
+            if($("#headerss").val()){
                 Base.Messager.open("请选择头像")
                 return;
+            }
+            if(!_inThis.checkUser()){
+                return "身份信息不匹配，请检查姓名或者身份证后六位是否输入错误！"
             }
 
             $.ajax({
                 type: 'post',
-                url: '/api/dop/charge/borrower/apply',
+                url: '/api/wns/user/register',
                 cache: false,    //上传文件不需缓存
                 processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
                 contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性enctype="multipart/form-data"
@@ -87,12 +90,35 @@ var login=new Vue({
                 dataType: 'json',
                 success: function (json) {
                     if (json.code * 1 == 1) {
-
+                        Base.Messager.open("注册成功")
+                        setTimeout(function(){
+                            alert(1)
+                        },2000)
                     } else {
 
                     }
 
 
+                }
+            })
+        },
+
+        /*y验证身份*/
+        checkUser: function(){
+            var _inThis = this;
+            Base.loadJsonNoAsync({
+                url:"/api/wns/user/detail",
+                data:{
+                    trueName: _inThis.name,
+                    personAfter: _inThis.idetify
+                },
+                type:"get"
+            },function(json){
+
+                if(json.code*1 == 1 ){
+                    return 1
+                }else{
+                    return 0
                 }
             })
         },

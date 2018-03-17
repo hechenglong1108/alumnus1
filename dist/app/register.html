@@ -33,19 +33,19 @@
                     <li>
                         <label for="">
                             <i>姓名:</i>
-                            <input type="text" placeholder="请输入您的姓名" v-model="name">
+                            <input type="text" placeholder="请输入您的姓名" v-model="name" nam="trueName">
                         </label>
                     </li>
                     <li>
                         <label for="">
                             <i>身份证后六位:</i>
-                            <input type="text" placeholder="请输入您的身份证后六位" v-model="idetify">
+                            <input type="text" placeholder="请输入您的身份证后六位" v-model="idetify" name="personAfter">
                         </label>
                     </li>
                     <li>
                         <label for="">
                             <i>毕业年份:</i>
-                            <select name="" id="" v-model="years" @change="getclass">
+                            <select name="graduationId" id="" v-model="years" @change="getclass">
                                 <option value="">请选择</option>
                                 <template v-for="item in yearList">
                                     <option :value="item.cid" >{{item.name}}</option>
@@ -57,7 +57,7 @@
                     <li>
                         <label for="">
                             <i>班级:</i>
-                            <select name="" v-model="banji">
+                            <select name="classId" v-model="banji">
                                     <option value="">请选择</option>
                                     <template v-for="item in classList">
                                         <option :value="item.cid" >{{item.name}}</option>
@@ -69,20 +69,20 @@
                     <li class="address">
                         <label for="">
                             <i>所在地区:</i>
-                            <select name="" v-model="province" @change="getCity">
+                            <select name="personProvince" v-model="province" @change="getCity">
                                 <option value="">请选择</option>
                                 <template v-for="item in provinceList">
                                     <option :value="item.regionId" >{{item.regionName}}</option>
                                 </template>
                             </select>
-                            <select name="" v-model="city" @change="getArea">
+                            <select name="personCity" v-model="city" @change="getArea">
                                 <option value="">请选择</option>
                                 <template v-for="item in cityList">
                                     <option :value="item.regionId" >{{item.regionName}}</option>
                                 </template>
 
                             </select>
-                            <select name="" v-model="area">
+                            <select name="personArea" v-model="area">
                                 <option value="">请选择</option>
                                 <template v-for="item in areaList">
                                     <option :value="item.regionId" >{{item.regionName}}</option>
@@ -93,38 +93,38 @@
                     <li>
                         <label for="">
                             <i>详细信息:</i>
-                            <input type="text" placeholder="请输入您的详细信息" v-model="address">
+                            <input type="text" placeholder="请输入您的详细信息" v-model="address" name="personAddr">
                         </label>
                     </li>
                     <li>
                         <label for="">
                             <i>单位名称:</i>
-                            <input type="text" placeholder="请输入单位名称" v-model="companyName">
+                            <input type="text" placeholder="请输入单位名称" v-model="companyName" name="company">
                         </label>
                     </li>
                     <li>
                         <label for="">
                             <i>所在部门:</i>
 
-                            <input type="text" placeholder="请输入您的所在部门" v-model="department">
+                            <input type="text" placeholder="请输入您的所在部门" v-model="department" name="department">
                         </label>
                     </li>
                     <li>
                         <label for="">
                             <i>职务:</i>
-                            <input type="text" placeholder="请输入您的职务" v-model="post">
+                            <input type="text" placeholder="请输入您的职务" v-model="post" name="position">
                         </label>
                     </li>
                     <li>
                         <label for="">
                             <i>手机号码:</i>
-                            <input type="text" placeholder="请输入您的手机号码" v-model="mobile">
+                            <input type="text" placeholder="请输入您的手机号码" v-model="mobile" name="mobile">
                         </label>
                     </li>
                     <li>
                         <label for="">
                             <i>头像:</i>
-                            <input type="file">
+                            <input type="file" id="headerss" name="file">
                         </label>
                     </li>
                 </form>
