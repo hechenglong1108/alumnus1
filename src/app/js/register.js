@@ -101,6 +101,9 @@ var login=new Vue({
             var _inThis = this;
             Base.loadJson({
                 url:"/api/dop/region/search?page=1&size=1000",
+                data:{
+                    parentId:0
+                },
                 type:"get"
             },function(json){
                 if(json.code*1 == 1 ){
