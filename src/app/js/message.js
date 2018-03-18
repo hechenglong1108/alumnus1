@@ -12,7 +12,8 @@ var message=new Vue({
         type:Base.getparm("type") || 1,/*1:班级留言板；2：我的留言板；3：站内留言板-人才招聘；4：站内留言板-技术咨询；5：站内留言板-其他*/
         ispinglun:0,
         page:0,
-        size:10
+        size:10,
+        tid:""/*话题id*/
     },
     methods:{
         goback: function(){
@@ -103,18 +104,24 @@ var message=new Vue({
                 return;
             }
             Base.loadJson({
-                url:"",
-                type:"",
+                url:"/api/dop/leave/message/add",
+                type:"POST",
                 data:{
-
+                    tId: _inThis.tid,
+                    content: _inThis.pingluncontent
                 }
             },function(json){
-
+                if(json.code*1 == 1){
+                    Base.Messager.open("评论成功")
+                }else{
+                    Base.Messager.open(json.message)
+                }
             })
         },
         /*显示评论框*/
-        showpinglun: function() {
-            this.ispinglun = 1
+        showpinglun: function(_tid) {
+            this.ispinglun = 1;
+            this.tid = _tid
         },
 
         /*发布话题*/
