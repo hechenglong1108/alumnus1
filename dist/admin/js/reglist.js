@@ -26,7 +26,7 @@ var reglist = {
     createtable: function() {
         table.render({
             elem: '#list' //指定原始表格元素选择器（推荐id选择器）
-            ,url:"/api/dop/self/alumnu/list?type=5"
+            ,url:"/api/dop/self/alumnu/list"
             ,response: {statusName: 'code',statusCode: 1,countName:'total',dataName:'rows'}
             ,request: {limitName: 'size'}
             ,cols: [[
