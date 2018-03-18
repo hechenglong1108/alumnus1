@@ -109,7 +109,12 @@ var message=new Vue({
                     $(".dropload-down").remove();
                     _inThis.page = 0;
                     _inThis.messageList = [];
-                    window.me.isLockUp = false;
+                    $('.list').dropload({
+                        scrollArea : window,
+                        loadDownFn : function(me){
+                            me.isLockUp = false
+                        }
+                    });
                     _inThis.getMessage()
                 }else{
                     Base.Messager.open(json.message)
