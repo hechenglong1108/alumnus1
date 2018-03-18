@@ -85,6 +85,7 @@
 <script src="../js/base/base.js?v=1.0.0"></script>
 <script>
     $(function(){
+        Base.judgelogin()
         $("#btnLogin").click(function(){
 
             var name = $("#txtUserName").val();
@@ -98,7 +99,7 @@
                 return;
             }
             Base.loadJson({
-                url:"/wns/admin/login",
+                url:"/api/wns/admin/login",
                 data:{
                     un:name,
                     pass:pass
