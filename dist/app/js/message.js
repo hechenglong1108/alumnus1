@@ -48,6 +48,9 @@ var message=new Vue({
                         url: _url,
                         dataType: 'json',
                         success: function(data){
+                            if(!data.rows){
+                                return;
+                            }
                             var arrLen = data.rows.length;
                             if(arrLen > 0){
                                 /*for(var i=0; i<arrLen; i++){

@@ -26,10 +26,10 @@
 </body>
 
 <script type="text/html" id="titleTpl1">
-    {{#  if(d.status*1 == 6){ }}
-    <span>已录入</span>
+    {{#  if(d.personProvinceName){ }}
+    <span>d.personProvinceName + d.personCityName + d.personAreaName + d.personAddr</span>
     {{#  } else { }}
-    <span style="color:red;">待录入</span>
+    <span style="color:red;">---</span>
     {{#  } }}
 </script>
 <script src="../js/base/jquery.js?v=1.0.0"></script>

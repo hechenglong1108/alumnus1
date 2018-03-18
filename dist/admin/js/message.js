@@ -29,7 +29,7 @@ var message = {
     createtable: function() {
         table.render({
             elem: '#list' //指定原始表格元素选择器（推荐id选择器）
-            ,url:"/do.php/?c=35orderList_v2&status=4,6"
+            ,url:'/api/dop/topics/page?checkStatus=2&type=5'
             ,response: {statusName: 'code',statusCode: 1,countName:'total'}
             ,request: {limitName: 'size'}
             ,cols: [[

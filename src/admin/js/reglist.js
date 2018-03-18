@@ -19,6 +19,9 @@ var reglist = {
             }
 
         })
+        $("#shuaxin").click(function(){
+            _inThis.createtable();
+        })
     },
     createtable: function() {
         table.render({
