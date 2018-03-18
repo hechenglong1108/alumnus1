@@ -41,8 +41,11 @@
         <ul class="Box">
             <template v-for="item in messageList">
                 <li class="box">
-                    <div class="headPortrait">
+                    <div class="headPortrait" v-if="item.addFid">
                         <img src="/api/dop/file/get?fid={{item.addFid}}" alt="">
+                    </div>
+                    <div class="headPortrait" v-else>
+                        <img src="images/timg.jpeg" alt="">
                     </div>
                     <div class="content">
                         <h5 style="color: #40AFFE" v-cloak>{{item.addTrueName}}</h5>
@@ -51,8 +54,11 @@
                         <p class="time"><span v-cloak>{{item.addTime}}</span><i @click="showpinglun(item.tId)"></i></p>
                         <template v-for="list in item.leaveMessageList">
                             <div class="comment">
-                                <div class="commentheadPortrait">
+                                <div class="commentheadPortrait"v-if="list.addFid" >
                                     <img src="/api/dop/file/get?fid={{list.addFid}}" alt="">
+                                </div>
+                                <div class="commentheadPortrait" v-else >
+                                    <img src="images/timg.jpeg" alt="">
                                 </div>
                                 <div class="comment_content">
                                     <span style="color: #40AFFE" v-cloak>{{list.trueName}}：</span><span>{{list.content}}</span>
