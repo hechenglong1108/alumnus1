@@ -106,16 +106,8 @@ var message=new Vue({
                 if(json.code*1 == 1){
                     Base.Messager.open("评论成功");
                     _inThis.ispinglun = 0;
-                    $(".dropload-down").remove();
-                    _inThis.page = 0;
-                    _inThis.messageList = [];
-                    $('.list').dropload({
-                        scrollArea : window,
-                        loadDownFn : function(me){
-                            me.isLockUp = false
-                        }
-                    });
-                    _inThis.getMessage()
+                    var _url = window.location.href;
+                    location.href = _url
                 }else{
                     Base.Messager.open(json.message)
                 }
