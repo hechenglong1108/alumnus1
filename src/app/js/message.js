@@ -108,6 +108,7 @@ var message=new Vue({
                     _inThis.ispinglun = 0;
                     $(".dropload-down").remove();
                     _inThis.page = 0;
+                    _inThis.messageList = [];
                     _inThis.getMessage()
                 }else{
                     Base.Messager.open(json.message)
