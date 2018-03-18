@@ -36,6 +36,7 @@ var message=new Vue({
             $('.list').dropload({
                 scrollArea : window,
                 loadDownFn : function(me){
+                    me.isLockUp = false;
                     _inThis.page++;
                     // 拼接HTML
                     var _url ='/api/dop/topics/page?checkStatus=2&type=' + _type + "&page=" +_inThis.page+'&size='+_inThis.size;
