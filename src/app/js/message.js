@@ -55,6 +55,7 @@ var message=new Vue({
                             var arrLen = data.rows.length;
                             if(arrLen > 0){
                                 $(".dropload-down>div").remove();
+                                $(".dropload-down").append(me.opts.domDown.domLoad);
                                 /*for(var i=0; i<arrLen; i++){
                                     result +=   '<a class="item opacity" href="'+data[i].link+'">'
                                         +'<img src="'+data[i].pic+'" alt="">'
