@@ -61,8 +61,8 @@
                                 <div class="commentheadPortrait" v-else >
                                     <img src="images/timg.jpeg" alt="">
                                 </div>
-                                <div class="comment_content">
-                                    <span style="color: #40AFFE" v-cloak>{{list.trueName}}：</span><span>{{list.content}}</span>
+                                <div class="comment_content" style="overflow: hidden">
+                                    <span style="color: #40AFFE;float: left" v-cloak>{{list.trueName}}：</span><p style="width: 4rem;float: left">{{list.content}}</p>
                                     <p v-cloak>{{list.regTime}}</p>
                                 </div>
                             </div>

@@ -54,8 +54,7 @@ var message=new Vue({
                             }
                             var arrLen = data.rows.length;
                             if(arrLen > 0){
-                                $(".dropload-down>div").remove();
-                                $(".dropload-down").append(me.opts.domDown.domLoad);
+
                                 /*for(var i=0; i<arrLen; i++){
                                     result +=   '<a class="item opacity" href="'+data[i].link+'">'
                                         +'<img src="'+data[i].pic+'" alt="">'
@@ -116,7 +115,7 @@ var message=new Vue({
                 if(json.code*1 == 1){
                     Base.Messager.open("评论成功");
                     _inThis.ispinglun = 0;
-                    $(".dropload-down>div").remove();
+                    $(".dropload-down").remove();
                     _inThis.getMessage()
                 }else{
                     Base.Messager.open(json.message)
