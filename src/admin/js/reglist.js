@@ -27,7 +27,7 @@ var reglist = {
         table.render({
             elem: '#list' //指定原始表格元素选择器（推荐id选择器）
             ,url:"/api/dop/self/alumnu/list"
-            ,response: {statusName: 'code',statusCode: 1,countName:'total'}
+            ,response: {statusName: 'code',statusCode: 1,countName:'total',dataName:'rows'}
             ,request: {limitName: 'size'}
             ,cols: [[
                 {checkbox: true}, //默认全选,
