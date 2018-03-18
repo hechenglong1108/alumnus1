@@ -42,7 +42,7 @@
             <template v-for="item in messageList">
                 <li class="box">
                     <div class="headPortrait">
-                        <img src="images/timg.jpeg" alt="">
+                        <img :src="/api/dop/file/get?fid='item.addFid'" alt="">
                     </div>
                     <div class="content">
                         <h5 style="color: #40AFFE" v-cloak>{{item.addTrueName}}</h5>
@@ -52,7 +52,7 @@
                         <template v-for="list in item.leaveMessageList">
                             <div class="comment">
                                 <div class="commentheadPortrait">
-                                    <img src="images/timg.jpeg" alt="">
+                                    <img :src="/api/dop/file/get?fid='list.addFid'" alt="">
                                 </div>
                                 <div class="comment_content">
                                     <span style="color: #40AFFE" v-cloak>{{list.trueName}}：</span><span>{{list.content}}</span>
