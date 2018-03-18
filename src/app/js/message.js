@@ -114,6 +114,7 @@ var message=new Vue({
                 if(json.code*1 == 1){
                     Base.Messager.open("评论成功");
                     _inThis.ispinglun = 0;
+                    $(".dropload-down>div").remove();
                     _inThis.getMessage()
                 }else{
                     Base.Messager.open(json.message)
@@ -155,7 +156,8 @@ var message=new Vue({
             },function(json){
                 if(json.code*1 == 1){
                     Base.Messager.open("发布成功");
-                    /*_inThis.getMessage()*/
+                    $(".dropload-down>div").remove();
+                    _inThis.getMessage()
                 }else{
                     Base.Messager.open(json.message);
                 }
