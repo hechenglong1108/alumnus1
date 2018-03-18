@@ -54,6 +54,7 @@ var message=new Vue({
                             }
                             var arrLen = data.rows.length;
                             if(arrLen > 0){
+                                $(".dropload-down>div").remove();
                                 /*for(var i=0; i<arrLen; i++){
                                     result +=   '<a class="item opacity" href="'+data[i].link+'">'
                                         +'<img src="'+data[i].pic+'" alt="">'
@@ -156,8 +157,8 @@ var message=new Vue({
             },function(json){
                 if(json.code*1 == 1){
                     Base.Messager.open("发布成功");
-                    $(".dropload-down>div").remove();
-                    _inThis.getMessage()
+                    /*$(".dropload-down>div").remove();
+                    _inThis.getMessage()*/
                 }else{
                     Base.Messager.open(json.message);
                 }
