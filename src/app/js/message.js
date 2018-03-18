@@ -114,7 +114,7 @@ var message=new Vue({
                 if(json.code*1 == 1){
                     Base.Messager.open("评论成功");
                     _inThis.ispinglun = 0;
-                    _inThis.created()
+                    _inThis.getMessage()
                 }else{
                     Base.Messager.open(json.message)
                 }
