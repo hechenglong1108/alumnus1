@@ -86,15 +86,33 @@
 <script>
     $(function(){
         $("#btnLogin").click(function(){
-            location.href = "reglist.html"
+
+            var name = $("#txtUserName").val();
+            var pass = $("#txtPwd").val();
+            if(!name){
+                Base.Messager.open("请输入用户名")
+                return;
+            }
+            if(!pass){
+                Base.Messager.open("请输入密码")
+                return;
+            }
             Base.loadJson({
-                url:"",
+                url:"/wns/admin/login",
                 data:{
-
+                    un:name,
+                    pass:pass
                 },
-                type:""
+                type:"POST"
             },function(json){
-
+                if(json.code*1 == 1){
+                    Base.Messager.open("登录成功")
+                    setTimeout(function () {
+                        location.href = "reglist.html"
+                    },2000)
+                }else{
+                    Base.Messager.open(json.message)
+                }
             })
         })
     })
