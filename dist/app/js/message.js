@@ -32,8 +32,6 @@ var message=new Vue({
             } else if(_inThis.type*1 == 3){
                 _type = 1
             }
-
-
             // dropload
             $('.list').dropload({
                 scrollArea : window,
@@ -55,15 +53,8 @@ var message=new Vue({
                             var arrLen = data.rows.length;
                             if(arrLen > 0){
 
-                                /*for(var i=0; i<arrLen; i++){
-                                    result +=   '<a class="item opacity" href="'+data[i].link+'">'
-                                        +'<img src="'+data[i].pic+'" alt="">'
-                                        +'<h3>'+data[i].title+'</h3>'
-                                        +'<span class="date">'+data[i].date+'</span>'
-                                        +'</a>';
-                                }*/
-                                // 如果没有数据
                             }else{
+                                // 如果没有数据
                                 // 锁定
                                 me.lock();
                                 // 无数据
@@ -116,6 +107,7 @@ var message=new Vue({
                     Base.Messager.open("评论成功");
                     _inThis.ispinglun = 0;
                     $(".dropload-down").remove();
+                    _inThis.page = 0;
                     _inThis.getMessage()
                 }else{
                     Base.Messager.open(json.message)
@@ -125,7 +117,7 @@ var message=new Vue({
         /*显示评论框*/
         showpinglun: function(_tid) {
             this.ispinglun = 1;
-            this.tid = _tid
+            this.tid = _tid;
         },
 
         /*发布话题*/
