@@ -106,7 +106,7 @@ var message=new Vue({
                 if(json.code*1 == 1){
                     Base.Messager.open("评论成功");
                     _inThis.ispinglun = 0;
-                    var _url = window.location.href;
+                    var _url = window.location.href.split("app/")[1];
                     location.href = _url
                 }else{
                     Base.Messager.open(json.message)
