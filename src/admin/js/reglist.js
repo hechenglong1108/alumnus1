@@ -11,6 +11,9 @@ var reglist = {
     },
     addevent: function() {
         var _inThis = this;
+        $("#shuaxin").click(function () {
+            _inThis.createtable()
+        })
         $("#update").click(function(){
             var _selected = table.checkStatus('testReload').data;
             if(_selected.length != 1) {
