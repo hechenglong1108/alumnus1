@@ -37,7 +37,15 @@
                 <p id="time"></p>
             </div>
         </div>
-        <div class="layui-form-item layui-form-text">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">审核：</label>
+            <div class="layui-input-block">
+                <input type="radio" name="checkStatus" value="2" title="通过" checked="">
+                <input type="radio" name="checkStatus" value="3" title="拒绝">
+            </div>
+        </div>
+       <!-- <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">审核</label>
             <div class="layui-input-block">
                 <select  id="types">
@@ -46,7 +54,7 @@
                     <option value="3">拒绝</option>
                 </select>
             </div>
-        </div>
+        </div>-->
         <button data-method="offset" data-type="auto" id="fabu" class="layui-btn" style="margin-top: 30px;margin-left: 100px">发布</button>
         <button data-method="offset" data-type="auto" id="close" class="layui-btn" style="margin-top: 30px;margin-left: 40px">关闭</button>
     </div>
@@ -64,11 +72,12 @@
 
 
     var reglist = {
-        messageType:Base.getparm("messageType"),/*留言还是留言项目*/
+        messageType:Base.getparm("messageType"),/*1-留言,2-留言项目*/
         topicId:Base.getparm("topicId"),/*话题id*/
         note:Base.getparm("note"),
         time:Base.getparm("time"),
         type:Base.getparm("type"),
+        id:Base.getparm("id"),
         init: function(){
             this.addevent();
             var _messagetype = "--";
@@ -99,40 +108,62 @@
         addevent: function() {
             var _inThis = this;
             $("#fabu").click(function(){
-                if(!$("#topics").val()){
-                    layer.msg("请输入内容")
-                    return;
+                if(_inThis.messageType*1 == 2){
+                    _inThis.checkTopics()
+                }else{
+                    _inThis.checkMessage()
                 }
-                if($("#types").val()*1 == 0){
-                    layer.msg("请选择分类")
-                    return;
-                }
-                Base.loadJson({
-                    url:"/api/dop/topics/add",
-                    data:{
-                        topics:$("#topics").val(),
-                        type:$("#types").val()
-                    },
-                    type:"POST"
-                },function(json){
-                    if(json.code*1 == 1){
-                        layer.msg("发布成功")
-                        setTimeout(function(){
-                            var index = parent.layer.getFrameIndex(window.name);
-                            parent.layer.close(index);
-                            message.init()
-                        },2000)
-                    }else{
-                        layer.msg(json.message)
-                    }
-                })
-
             })
             var index = parent.layer.getFrameIndex(window.name);
             $("#close").click(function(){
                 parent.layer.close(index); //执行关闭
             })
         },
+        /*审核话题*/
+        checkTopics: function(){
+            var _inThis = this;
+            Base.loadJson({
+                url:"/api/dop/topics/check/update",
+                data:{
+                    cheStatus:$("input[name='checkStatus']:checked").val(),
+                    tId:_inThis.id
+                },
+                type:"POST"
+            },function(json){
+                if(json.code*1 == 1){
+                    layer.msg(json.message || "审核成功")
+                    setTimeout(function(){
+                        var index = parent.layer.getFrameIndex(window.name);
+                        parent.layer.close(index);
+                    },2000)
+                }else{
+                    layer.msg(json.message)
+                }
+            })
+        },
+        /*审核留言*/
+        checkMessage: function(){
+            var _inThis = this;
+            Base.loadJson({
+                url:"/api/dop/leave/message/check/update",
+                data:{
+                    cheStatus:$("input[name='checkStatus']:checked").val(),
+                    id:_inThis.id
+                },
+                type:"POST"
+            },function(json){
+                if(json.code*1 == 1){
+                    layer.msg(json.message || "审核成功")
+                    setTimeout(function(){
+                        var index = parent.layer.getFrameIndex(window.name);
+                        parent.layer.close(index);
+                    },2000)
+                }else{
+                    layer.msg(json.message)
+                }
+            })
+        },
+        /*获取详情*/
         getTopic: function(){
             var _inThis = this;
             Base.loadJsonNoAsync({

@@ -23,7 +23,7 @@ var check = {
                     title:'留言审核',
                     shade:0.6,
                     anim:2,
-                    content:'checkContent.html?messageType='+_selected[0].messageType+"&note="+_selected[0].note+"&time="+_selected[0].regTime+"&topicId="+_selected[0].topicId+"&type="+_selected[0].type,
+                    content:'checkContent.html?messageType='+_selected[0].messageType+"&note="+_selected[0].note+"&time="+_selected[0].regTime+"&topicId="+_selected[0].topicId+"&type="+_selected[0].type+"&id="+_selected[0].id,
                     yes : function(layero,index) {
                         layer.close(index);
                     }
