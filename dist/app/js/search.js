@@ -10,8 +10,6 @@ var search=new Vue({
         provinceList:[],/*省份数组*/
         cityList:[],/*城市数组*/
         areaList:[],/*区数组*/
-        page:0,
-        size:10,
         years:"",
         province:"",
         city:"",
@@ -38,6 +36,8 @@ var search=new Vue({
             if(_inThis.personArea){
                 _url += "&graduationId=" + _inThis.personArea
             }*/
+            var page = 0,
+                size = 10
 
             $('.list').dropload({
                 scrollArea : window,
@@ -47,7 +47,7 @@ var search=new Vue({
 
                     var _url = '/api/dop/found/alumnus/list?activationStatus=1&graduationId=' + _inThis.years
                         + "&personProvince=" + _inThis.province + "&personCity=" + _inThis.city + "&personArea=" + _inThis.area
-                        + "&page=" + _inThis.page + "&size=" + _inThis.size
+                        + "&page=" + page + "&size=" + size
                     $.ajax({
                         type: 'GET',
                         url: _url,
