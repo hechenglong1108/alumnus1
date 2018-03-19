@@ -16,7 +16,7 @@
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label" >留言项目：</label>
             <div class="layui-input-block">
-                <p id="message"></p>
+                <p id="topics"></p>
             </div>
         </div>
         <div class="layui-form-item layui-form-text">
@@ -28,7 +28,7 @@
         <div class="layui-form-item layui-form-text" class="topicbox">
             <label class="layui-form-label" >留言：</label>
             <div class="layui-input-block">
-                <p id="topic"></p>
+                <p id="message"></p>
             </div>
         </div>
         <div class="layui-form-item layui-form-text">
@@ -73,8 +73,6 @@
     var reglist = {
         messageType:Base.getparm("messageType"),/*2-留言,1-留言项目*/
         topicId:Base.getparm("topicId"),/*话题id*/
-        note:Base.getparm("note"),
-        time:Base.getparm("time"),
         type:Base.getparm("type"),
         id:Base.getparm("id"),
         init: function(){
@@ -84,13 +82,15 @@
 
             if(this.messageType*1 == 2){
                 this.getTopic()
+                this.getMessage()
                 $(".topicbox").show()
-                $("#topic").html(this.note)
-                $("#time").html(this.time)
+                /*$("#topic").html(this.note)
+                $("#time").html(this.time)*/
             }else{
                 $(".topicbox").hide()
-                $("#message").html(this.note)
-                $("#time").html(this.time)
+                this.getMessage()
+                /*$("#message").html(this.note)
+                $("#time").html(this.time)*/
             }
             if(this.type*1 == 1){
                 _messagetype = "其他"
@@ -162,7 +162,7 @@
                 }
             })
         },
-        /*获取详情*/
+        /*获取话题详情*/
         getTopic: function(){
             var _inThis = this;
             Base.loadJsonNoAsync({
@@ -174,7 +174,24 @@
             },function(json){
                 if(json.code*1 == 1){
                     _inThis.type = json.data.type
-                    $("#message").html(json.data.topics)
+                    $("#topics").html(json.data.topics)
+                }else{
+                    layer.msg(json.message)
+                }
+            })
+            $("#message").html(this.note)
+        },
+        getMessage: function(){
+            var _inThis = this;
+            Base.loadJsonNoAsync({
+                url:"/api/dop/leave/message/detail",
+                data:{
+                    id:_inThis.id
+                },
+                type:"get"
+            },function(json){
+                if(json.code*1 == 1){
+                    $("#message").html(json.data.content)
                 }else{
                     layer.msg(json.message)
                 }
