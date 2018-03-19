@@ -22,6 +22,7 @@ var search=new Vue({
         search: function(){
 
             var _inThis = this;
+            _inThis.studentsList = [];
 
 
            /* if(_inThis.years){
