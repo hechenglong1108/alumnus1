@@ -25,7 +25,7 @@
                 <p id="messagetype"></p>
             </div>
         </div>
-        <div class="layui-form-item layui-form-text" class="topicbox">
+        <div class="layui-form-item layui-form-text" class="messagebox">
             <label class="layui-form-label" >留言：</label>
             <div class="layui-input-block">
                 <p id="message"></p>
@@ -82,12 +82,10 @@
 
             if(this.messageType*1 == 2){
                 this.getMessage()
-                $(".topicbox").show()
                 /*$("#topic").html(this.note)
                 $("#time").html(this.time)*/
             }else{
-                $(".topicbox").hide()
-
+                $(".messagebox").hide()
                 this.getTopic()
                 /*$("#message").html(this.note)
                 $("#time").html(this.time)*/
@@ -175,6 +173,7 @@
                 if(json.code*1 == 1){
                     _inThis.type = json.data.type
                     $("#topics").html(json.data.topics)
+                    $("#time").html(json.data.addTime)
                 }else{
                     layer.msg(json.message)
                 }
@@ -192,6 +191,7 @@
             },function(json){
                 if(json.code*1 == 1){
                     $("#message").html(json.data.content)
+                    $("#time").html(json.data.addTime)
                 }else{
                     layer.msg(json.message)
                 }
