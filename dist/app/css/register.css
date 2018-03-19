@@ -32,6 +32,8 @@
     float: left;
     width: 2rem;
     text-align: right;
+    height: .8rem;
+    line-height: .8rem;
      }
 .reg  ul  li  label  input {
     background: transparent;
