@@ -33,26 +33,35 @@
                 <li>
                     <label for="">
                         <i>毕业年份:</i>
-                        <select name="" id="" v-model="years">
-                            <option value="2017">2017</option>
-                            <option value="2017">2017</option>
-                            <option value="2017">2017</option>
-                            <option value="2017">2017</option>
+                        <select name="graduationId" id="" v-model="years" @change="getclass">
+                            <option value="">请选择</option>
+                            <template v-for="item in yearList">
+                                <option :value="item.cid" >{{item.name}}</option>
+                            </template>
                         </select>
                     </label>
                 </li>
                 <li class="address">
                     <label for="">
                         <i>所在地区:</i>
-                        <select name="" v-model="province" @change="getCity">
+                        <select name="personProvince" v-model="province" @change="getCity">
                             <option value="">请选择</option>
+                            <template v-for="item in provinceList">
+                                <option :value="item.regionId" >{{item.regionName}}</option>
+                            </template>
                         </select>
-                        <select name="" v-model="city">
+                        <select name="personCity" v-model="city" @change="getArea">
                             <option value="">请选择</option>
+                            <template v-for="item in cityList">
+                                <option :value="item.regionId" >{{item.regionName}}</option>
+                            </template>
 
                         </select>
-                        <select name="" v-model="area">
+                        <select name="personArea" v-model="area">
                             <option value="">请选择</option>
+                            <template v-for="item in areaList">
+                                <option :value="item.regionId" >{{item.regionName}}</option>
+                            </template>
                         </select>
                     </label>
                 </li>
@@ -63,8 +72,19 @@
         <button class="searchbtn" @click="search">查询</button>
     </div>
 
+    <div class="List">
+        <ul class="Box">
+            <template v-for="item in studentsList">
+                <li class="reg students" :class="{'reg students':item.activationStatus*1 == 1,'noreg students':item.activationStatus*1 == 2}">
+                    <h5 v-cloak><span>{{item.trueName}}</span><span>手机号码：{{item.mobile}}</span></h5>
 
-    <ul class="Box">
+                    <p v-cloak>所在地区:<span>{{item.personProvinceName}}{{item.personCityName}}{{item.personAreaName}}{{item.personAddr}}</span></p>
+                    <p v-cloak>单位：<span style="margin-left: .2rem">{{item.company}}</span>职务：<span>{{item.position}}</span></p>
+                </li>
+            </template>
+        </ul>
+    </div>
+    <!--<ul class="Box">
         <li class="reg students">
             <h5><span>张三</span><span>手机号码：1789999999</span></h5>
 
@@ -79,7 +99,7 @@
             <p>所在地区<span>浙江省杭州市西湖区京西北缘4栋2207</span></p>
             <p>单位：<span>杭州任润科技股份有限公司</span>  职务：<span>前端工程师</span></p>
         </li>
-    </ul>
+    </ul>-->
 </div>
 </div>
 </body>
