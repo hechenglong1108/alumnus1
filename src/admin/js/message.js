@@ -11,6 +11,9 @@ var message = {
     },
     addevent: function() {
         var _inThis = this;
+        $("#shuaxin").click(function(){
+            _inThis.createtable()
+        })
         $("#update").click(function(){
             layer.open({
                 type:2,
