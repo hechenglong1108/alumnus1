@@ -25,7 +25,7 @@
                 </select>
             </div>
         </div>
-        <button data-method="offset" data-type="auto" id="update" class="layui-btn" style="margin-top: 30px;margin-left: 100px">发布</button>
+        <button data-method="offset" data-type="auto" id="fabu" class="layui-btn" style="margin-top: 30px;margin-left: 100px">发布</button>
         <button data-method="offset" data-type="auto" id="close" class="layui-btn" style="margin-top: 30px;margin-left: 40px">关闭</button>
     </div>
 </div>
@@ -47,13 +47,13 @@
         },
         addevent: function() {
             var _inThis = this;
-            $("#update").click(function(){
+            $("#fabu").click(function(){
                 if(!$("#topics").val()){
-                    Base.Messager.open("请输入内容")
+                    layer.msg("请输入内容")
                     return;
                 }
                 if(!$("#types").val()){
-                    Base.Messager.open("请选择分类")
+                    layer.msg("请选择分类")
                     return;
                 }
                 Base.loadJson({
@@ -65,14 +65,14 @@
                     type:"POST"
                 },function(json){
                     if(json.code*1 == 1){
-                        Base.Messager.open("发布成功")
+                        layer.msg("发布成功")
                         setTimeout(function(){
                             var index = parent.layer.getFrameIndex(window.name);
                             parent.layer.close(index);
                             message.createtable();
                         },2000)
                     }else{
-                        Base.Messager.open(json.message)
+                        layer.msg(json.message)
                     }
                 })
 
