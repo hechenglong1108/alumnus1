@@ -23,12 +23,12 @@ var search=new Vue({
         },
         search: function(){
             var _inThis = this;
-            var _url = '/api/dop/found/alumnus/list?activationStatus=1';
 
-            if(_inThis.years){
-                _url += "&graduationId=" + _inThis.years
-            }
-            if(_inThis.province){
+
+           /* if(_inThis.years){
+                _url = "&graduationId=" + _inThis.years
+            }*/
+            /*if(_inThis.province){
                 _url += "&personProvince=" + _inThis.province
             }
             if(_inThis.city){
@@ -36,15 +36,17 @@ var search=new Vue({
             }
             if(_inThis.personArea){
                 _url += "&graduationId=" + _inThis.personArea
-            }
+            }*/
 
             $('.list').dropload({
                 scrollArea : window,
                 loadDownFn : function(me){
                     _inThis.page++;
                     // 拼接HTML
-                    var _pagehtml = "&page=" + _inThis.page + "&size=" + _inThis.size
-                    _url += _pagehtml
+
+                    var _url = '/api/dop/found/alumnus/list?activationStatus=1&graduationId=' + _inThis.years
+                        + "&personProvince=" + _inThis.province + "&personCity=" + _inThis.city + "&graduationId=" + _inThis.personArea
+                        + "&page=" + _inThis.page + "&size=" + _inThis.size
                     $.ajax({
                         type: 'GET',
                         url: _url,
