@@ -15,22 +15,18 @@ var check = {
                 layer.msg('请选择一条数据。。', {icon: 5});
                 return;
             }
-
-            $("#update").click(function(){
-                layer.open({
-                    type:2,
-                    area:['800px','600px'],
-                    title:'留言审核',
-                    shade:0.6,
-                    anim:2,
-                    content:'checkContent.html?messageType='+_selected[0].messageType+"&note="+_selected[0].note+"&time="+_selected[0].regTime+"&topicId="+_selected[0].topicId+"&type="+_selected[0].type+"&id="+_selected[0].id,
-                    yes : function(layero,index) {
-                        layer.close(index);
-                    }
-                })
-
+            layer.open({
+                type:2,
+                area:['800px','600px'],
+                title:'留言审核',
+                shade:0.6,
+                anim:2,
+                content:'checkContent.html?messageType='+_selected[0].messageType+"&note="+_selected[0].note+"&time="+_selected[0].regTime+"&topicId="+_selected[0].topicId+"&type="+_selected[0].type+"&id="+_selected[0].id,
+                yes : function(layero,index) {
+                    layer.close(index);
+                }
             })
-
+            
         })
     },
     createtable: function() {
