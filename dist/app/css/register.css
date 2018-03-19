@@ -36,7 +36,7 @@
     line-height: .8rem;
      }
 .reg  ul  li  label  input {
-    background: transparent;
+    background: #fff;
     display: inline-block;
     height: .8rem;
     line-height: .8rem;
@@ -47,7 +47,7 @@
     padding-left: .3rem;
     margin-left: .3rem; }
 .reg  ul  li  label  select {
-    background: transparent;
+    background: #fff;
     display: inline-block;
     height: .8rem;
     line-height: .8rem;
@@ -60,7 +60,7 @@
 
 
 .reg  ul  li.address  label  select {
-    background: transparent;
+    background: #fff;
     display: inline-block;
     height: .8rem;
     line-height: .8rem;

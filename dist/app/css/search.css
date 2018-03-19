@@ -64,7 +64,7 @@
     height: .8rem;
 }
 .search  ul  li  label  input {
-    background: transparent;
+    background: #fff;
     display: inline-block;
     height: .8rem;
     line-height: .8rem;
@@ -75,7 +75,7 @@
     padding-left: .3rem;
     margin-left: .3rem; }
 .search  ul  li  label  select {
-    background: transparent;
+    background: #fff;
     display: inline-block;
     height: .8rem;
     line-height: .8rem;
@@ -88,7 +88,7 @@
 
 
 .search  ul  li.address  label  select {
-    background: transparent;
+    background: #fff;
     display: inline-block;
     height: .8rem;
     line-height: .8rem;
