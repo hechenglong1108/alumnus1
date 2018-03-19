@@ -32,6 +32,12 @@
             </div>
         </div>
         <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label" >发布人：</label>
+            <div class="layui-input-block">
+                <p id="trueName"></p>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
             <label class="layui-form-label" >发布时间：</label>
             <div class="layui-input-block">
                 <p id="time"></p>
@@ -189,6 +195,7 @@
                     _inThis.type = json.data.type
                     $("#topics").html(json.data.topics)
                     $("#time").html(json.data.addTime)
+                    $("#trueName").html(json.data.addTrueName)
                 }else{
                     layer.msg(json.message)
                 }
@@ -206,6 +213,7 @@
                 if(json.code*1 == 1){
                     $("#message").html(json.data.content)
                     $("#time").html(json.data.addTime)
+                    $("#trueName").html(json.data.addTrueName)
                 }else{
                     layer.msg(json.message)
                 }

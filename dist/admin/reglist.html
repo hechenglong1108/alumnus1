@@ -27,7 +27,7 @@
 
 <script type="text/html" id="titleTpl1">
     {{#  if(d.personProvinceName){ }}
-    <span>d.personProvinceName + d.personCityName + d.personAreaName + d.personAddr</span>
+    <span>{{d.personProvinceName}}} + {{d.personCityName}} + {{d.personAreaName}} + {{d.personAddr}}</span>
     {{#  } else { }}
     <span style="color:red;">---</span>
     {{#  } }}
