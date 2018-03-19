@@ -20,6 +20,7 @@ var login=new Vue({
                 Base.Messager.open("请输入密码")
                 return;
             }
+            Base.Messager.loading("正在登录中。。。")
             Base.loadJson({
                 url:"/api/wns/admin/login",
                 type:"post",
@@ -28,12 +29,13 @@ var login=new Vue({
                     pass: _inThis.password
                 }
             },function(json){
-                if(json.code*1 == 1){
-                    Base.Messager.open("登录成功")
+                if(json.code*1 == 1){/*
+                    */Base.Messager.open("登录成功")
                     Base.setCookies("uid",json.data.uid)
                     setTimeout(function(){
+                        Base.Messager.hideLoading()
                         location.href = 'index.html'
-                    },2000)
+                    },1000)
                 }else{
                     Base.Messager.open(json.message)
                 }
