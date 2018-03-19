@@ -46,7 +46,7 @@ var search=new Vue({
                     // 拼接HTML
 
                     var _url = '/api/dop/found/alumnus/list?activationStatus=1&graduationId=' + _inThis.years
-                        + "&personProvince=" + _inThis.province + "&personCity=" + _inThis.city + "&personArea=" + _inThis.personArea
+                        + "&personProvince=" + _inThis.province + "&personCity=" + _inThis.city + "&personArea=" + _inThis.area
                         + "&page=" + _inThis.page + "&size=" + _inThis.size
                     $.ajax({
                         type: 'GET',
