@@ -39,7 +39,8 @@ var message = {
                 {checkbox: true}, //默认全选,
                 {field: 'addTrueName', title: '发起人姓名', width: 120},
                 {field: 'addTime', title: '发起时间', width: 120},
-                {field: 'topics', title: '内容', width: 300}
+                {field: 'topics', title: '内容', width: 300},
+                {field: 'type', title: '类型', width: 100,templet: '#titleTpl1'}
             ]],
             page: true
             ,id:'testReload'
