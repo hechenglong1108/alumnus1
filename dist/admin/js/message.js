@@ -34,9 +34,9 @@ var message = {
             ,request: {limitName: 'size'}
             ,cols: [[
                 {checkbox: true}, //默认全选,
-                {field: 'trueName', title: '发起人姓名', width: 120},
-                {field: 'regTime', title: '发起时间', width: 120},
-                {field: 'note', title: '内容', width: 300}
+                {field: 'addTrueName', title: '发起人姓名', width: 120},
+                {field: 'addTime', title: '发起时间', width: 120},
+                {field: 'topics', title: '内容', width: 300}
             ]],
             page: true
             ,id:'testReload'
