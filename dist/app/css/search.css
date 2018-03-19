@@ -47,7 +47,7 @@
 }
 
 .search  ul  li  label {
-    background: rgba(255, 255, 255, 0.5);
+    /*background: rgba(255, 255, 255, 0.5);*/
     border-radius: 0.2rem;
     width: 100%;
     display: inline-block;
@@ -71,7 +71,7 @@
     width: 4rem;
     font-family: "PingFangSC-Regular";
     border: 1px solid #ddd;
-    border-radius: .05rem;
+    border-radius: .2rem;
     padding-left: .3rem;
     margin-left: .3rem; }
 .search  ul  li  label  select {
