@@ -4,6 +4,7 @@
 
 var check = {
     init: function(){
+        Base.judgelogin("login.html")
         this.addevent();
         this.createtable();
     },

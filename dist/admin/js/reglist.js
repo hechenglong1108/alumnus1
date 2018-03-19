@@ -5,7 +5,7 @@
 
 var reglist = {
     init: function(){
-        Base.judgelogin()
+        Base.judgelogin("login.html")
         this.addevent();
         this.createtable();
     },

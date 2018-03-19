@@ -6,6 +6,7 @@
 
 var message = {
     init: function(){
+        Base.judgelogin("login.html")
         this.addevent();
         this.createtable();
     },
