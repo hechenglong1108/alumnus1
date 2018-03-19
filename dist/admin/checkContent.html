@@ -82,8 +82,23 @@
 
             if(this.messageType*1 == 2){
                 this.getMessage()
-                /*$("#topic").html(this.note)
-                $("#time").html(this.time)*/
+                var _inThis = this;
+                Base.loadJsonNoAsync({
+                    url:"/api/dop/topics/detail",
+                    data:{
+                        tId:_inThis.topicId
+                    },
+                    type:"get"
+                },function(json){
+                    if(json.code*1 == 1){
+                        _inThis.type = json.data.type
+                        $("#topics").html(json.data.topics)
+                        $("#time").html(json.data.addTime)
+                    }else{
+                        layer.msg(json.message)
+                    }
+                })
+
             }else{
                 $("#messagebox").hide()
                 this.getTopic()
@@ -178,7 +193,6 @@
                     layer.msg(json.message)
                 }
             })
-            $("#message").html(this.note)
         },
         getMessage: function(){
             var _inThis = this;
@@ -196,7 +210,6 @@
                     layer.msg(json.message)
                 }
             })
-            $("#message").html(this.note)
         }
     }
 
