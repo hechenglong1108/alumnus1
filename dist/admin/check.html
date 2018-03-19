@@ -31,6 +31,18 @@
     <span>留言审核</span>
     {{#  } }}
 </script>
+
+<script type="text/html" id="titleTpl2">
+    {{#  if(d.messageStatus*1 == 1){ }}
+    <span>待审核</span>
+    {{#  } else { }}
+        {{#  if(d.messageStatus*1 == 1){ }}
+            <span>通过</span>
+        {{#  } else { }}
+            <span>不通过</span>
+        {{#  } }}
+    {{#  } }}
+</script>
 <script src="../js/base/jquery.js?v=1.0.0"></script>
 <script src="../js/base/layer.js?v=1.0.0"></script>
 <script src="../js/base/base.js?v=1.0.0"></script>

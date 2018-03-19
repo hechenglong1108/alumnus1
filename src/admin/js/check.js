@@ -30,7 +30,9 @@ var check = {
                 {field: 'note', title: '留言内容', width: 200},
                 {field: 'trueName', title: '发布人姓名', width: 100},
                 {field: 'regTime', title: '发布时间', width: 150},
-                {field: 'payMode', title: '类型', width: 100,templet: '#titleTpl1'},
+                {field: 'payMode', title: '类型', width: 120,templet: '#titleTpl1'},
+                {field: 'messageStatus', title: '状态', width: 120,templet: '#titleTpl2'},
+
             ]],
             page: true
             ,id:'testReload'
