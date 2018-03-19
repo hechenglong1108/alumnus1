@@ -34,7 +34,7 @@
                 <li>
                     <label for="">
                         <i>毕业年份:</i>
-                        <select name="graduationId" id="" v-model="years" @change="getclass">
+                        <select name="graduationId" id="" v-model="years">
                             <option value="">请选择</option>
                             <template v-for="item in yearList">
                                 <option :value="item.cid" >{{item.name}}</option>
