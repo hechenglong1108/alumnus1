@@ -29,7 +29,7 @@ var message = {
     createtable: function() {
         table.render({
             elem: '#list' //指定原始表格元素选择器（推荐id选择器）
-            ,url:'/api/dop/topics/page?type=5'
+            ,url:'/api/dop/topics/page?uid=' + Base.getCookies("uid")
             ,response: {statusName: 'code',statusCode: 1,countName:'total',dataName:'rows'}
             ,request: {limitName: 'size'}
             ,cols: [[
