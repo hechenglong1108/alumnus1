@@ -40,3 +40,7 @@
     margin-right: .2rem;
     cursor: pointer;
 }
+body{
+    background: url("images/background.png") no-repeat;
+    background-size: 100%;
+}
