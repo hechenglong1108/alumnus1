@@ -26,17 +26,11 @@ var check = {
             ,request: {limitName: 'size'}
             ,cols: [[
                 {checkbox: true}, //默认全选,
-                {field: '', title: '姓名', width: 120},
-                {field: 'kefu_name', title: '身份证后六位', width: 120},
-                {field: 'un', title: '毕业年份', width: 100},
-                {field: 'carOwnerName', title: '班级', width: 150},
-                {field: 'licenseNo', title: '所在地区', width: 300,templet: '#titleTpl1'},
-                {field: 'city', title: '单位名称', width: 150},
-                {field: 'insurance_corp', title: '所在部门', width: 150},
-                {field: 'isOver', title: '职务', width: 100,},
-                {field: 'sumPrem', title: '手机号码', width: 150},
+                {field: 'note', title: '留言项目内容', width: 200},
+                {field: 'note', title: '留言内容', width: 200},
+                {field: 'trueName', title: '发布人姓名', width: 100},
+                {field: 'regTime', title: '发布时间', width: 150},
                 {field: 'payMode', title: '类型', width: 100,templet: '#titleTpl1'},
-                {field: 'payMode', title: '', width: 100},
             ]],
             page: true
             ,id:'testReload'
