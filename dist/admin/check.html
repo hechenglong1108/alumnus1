@@ -25,10 +25,10 @@
 </body>
 
 <script type="text/html" id="titleTpl1">
-    {{#  if(d.status*1 == 6){ }}
-    <span>已录入</span>
+    {{#  if(d.messageType*1 == 1){ }}
+    <span>留言项目</span>
     {{#  } else { }}
-    <span style="color:red;">待录入</span>
+    <span>留言</span>
     {{#  } }}
 </script>
 <script src="../js/base/jquery.js?v=1.0.0"></script>

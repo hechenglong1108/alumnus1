@@ -21,7 +21,7 @@ var check = {
     createtable: function() {
         table.render({
             elem: '#list' //指定原始表格元素选择器（推荐id选择器）
-            ,url:"/do.php/?c=35orderList_v2&status=4,6"
+            ,url:"/api/dop/topics/topic/message/page?messageStatus=1"
             ,response: {statusName: 'code',statusCode: 1,countName:'total',dataName:'rows'}
             ,request: {limitName: 'size'}
             ,cols: [[
@@ -35,7 +35,8 @@ var check = {
                 {field: 'insurance_corp', title: '所在部门', width: 150},
                 {field: 'isOver', title: '职务', width: 100,},
                 {field: 'sumPrem', title: '手机号码', width: 150},
-                {field: 'payMode', title: '头像', width: 100},
+                {field: 'payMode', title: '类型', width: 100,templet: '#titleTpl1'},
+                {field: 'payMode', title: '', width: 100},
             ]],
             page: true
             ,id:'testReload'
