@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>机械校友</title>
+    <link rel="stylesheet" href="js/layui/css/layui.css">
+</head>
+<body>
+<div style="padding: 20px">
+
+    <form action="" id="excelbox">
+        <label for="">选择Excel文件：</label>
+        <input type="file" name="file" id="excels">
+    </form>
+    <div class="layui-form"  style="margin-top: 30px">
+        <button data-method="offset" data-type="auto" id="fabu" class="layui-btn" style="margin-top: 30px;margin-left: 100px">发布</button>
+        <button data-method="offset" data-type="auto" id="close" class="layui-btn" style="margin-top: 30px;margin-left: 40px">关闭</button>
+    </div>
+</div>
+</body>
+<script src="../js/base/jquery.js?v=1.0.0"></script>
+<script src="../js/base/layer.js?v=1.0.0"></script>
+<script src="../js/base/base.js?v=1.0.0"></script>
+<script src="js/layui/layui.all.js"></script>
+<script src="js/message.js"></script>
+<script>
+    /**
+     * Created by hcl on 2018/3/15
+     */
+
+
+    var reglist = {
+        init: function(){
+            this.addevent();
+        },
+        addevent: function() {
+            var _inThis = this;
+            $("#fabu").click(function(){
+
+                var _data = new FormData($("#registerfrom")[0]),
+                    _inThis = this;
+
+                if(!$("#excels").val()){
+                    layer.msg("请选择头像")
+                    return;
+                }
+
+                $.ajax({
+                    type: 'post',
+                    url: '/api/wns/excel/import',
+                    cache: false,    //上传文件不需缓存
+                    processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
+                    contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性enctype="multipart/form-data"
+                    data: _data,
+                    dataType: 'json',
+                    success: function (json) {
+                        if (json.code * 1 == 1) {
+                            layer.msg(json.message || "导入成功")
+                        } else {
+                            layer.msg(json.message)
+                        }
+
+
+                    }
+                })
+            })
+            var index = parent.layer.getFrameIndex(window.name);
+            $("#close").click(function(){
+                parent.layer.close(index); //执行关闭
+            })
+        }
+    }
+
+    $(function(){
+        reglist.init();
+    })
+
+
+</script>
+</html>
