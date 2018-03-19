@@ -23,7 +23,7 @@ var check = {
                     title:'发布消息',
                     shade:0.6,
                     anim:2,
-                    content:'checkContent.html?messageType='+_selected.messageType+"&note="+_selected.note+"&time="+_selected.regTime+"&topicId="+_selected.topicId,
+                    content:'checkContent.html?messageType='+_selected[0].messageType+"&note="+_selected[0].note+"&time="+_selected[0].regTime+"&topicId="+_selected[0].topicId,
                     yes : function(layero,index) {
                         layer.close(index);
                     }
