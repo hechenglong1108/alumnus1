@@ -42,7 +42,7 @@ var search=new Vue({
             $('.list').dropload({
                 scrollArea : window,
                 loadDownFn : function(me){
-                    _inThis.page++;
+                    page++;
                     // 拼接HTML
 
                     var _url = '/api/dop/found/alumnus/list?activationStatus=1&graduationId=' + _inThis.years
