@@ -72,7 +72,7 @@
 
 
     var reglist = {
-        messageType:Base.getparm("messageType"),/*1-留言,2-留言项目*/
+        messageType:Base.getparm("messageType"),/*2-留言,1-留言项目*/
         topicId:Base.getparm("topicId"),/*话题id*/
         note:Base.getparm("note"),
         time:Base.getparm("time"),
@@ -108,7 +108,7 @@
         addevent: function() {
             var _inThis = this;
             $("#fabu").click(function(){
-                if(_inThis.messageType*1 == 2){
+                if(_inThis.messageType*1 == 1){
                     _inThis.checkTopics()
                 }else{
                     _inThis.checkMessage()
