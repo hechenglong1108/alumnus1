@@ -29,8 +29,8 @@ var login=new Vue({
                     pass: _inThis.password
                 }
             },function(json){
-                if(json.code*1 == 1){/*
-                    */Base.Messager.open("登录成功")
+                if(json.code*1 == 1){
+                    /*Base.Messager.open("登录成功")*/
                     Base.setCookies("uid",json.data.uid)
                     setTimeout(function(){
                         Base.Messager.hideLoading()
