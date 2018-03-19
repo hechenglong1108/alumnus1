@@ -23,7 +23,7 @@ var search=new Vue({
         },
         search: function(){
             var _inThis = this;
-            var _url = '/dop/found/alumnus/list?activationStatus=1';
+            var _url = '/api/dop/found/alumnus/list?activationStatus=1';
 
             if(_inThis.years){
                 _url += "&graduationId=" + _inThis.years
@@ -43,7 +43,8 @@ var search=new Vue({
                 loadDownFn : function(me){
                     _inThis.page++;
                     // 拼接HTML
-
+                    var _pagehtml = "&page=" + _inThis.page + "&size=" + _inThis.size
+                    _url += _pagehtml
                     $.ajax({
                         type: 'GET',
                         url: _url,
@@ -77,7 +78,7 @@ var search=new Vue({
                             me.resetload();
                         },
                         error: function(xhr, type){
-                            alert('惊呆了!');
+                            Base.Messager.open('惊呆了!');
                             // 即使加载出错，也得重置
                             me.resetload();
                         }

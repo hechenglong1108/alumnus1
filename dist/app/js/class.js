@@ -65,7 +65,7 @@ var classs=new Vue({
                             me.resetload();
                         },
                         error: function(xhr, type){
-                            alert('惊呆了!');
+                            Base.Messager.open('惊呆了!');
                             // 即使加载出错，也得重置
                             me.resetload();
                         }
