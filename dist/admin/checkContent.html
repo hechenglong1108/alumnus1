@@ -25,7 +25,7 @@
                 <p id="messagetype"></p>
             </div>
         </div>
-        <div class="layui-form-item layui-form-text" class="messagebox">
+        <div class="layui-form-item layui-form-text" id="messagebox">
             <label class="layui-form-label" >留言：</label>
             <div class="layui-input-block">
                 <p id="message"></p>
@@ -85,7 +85,7 @@
                 /*$("#topic").html(this.note)
                 $("#time").html(this.time)*/
             }else{
-                $(".messagebox").hide()
+                $("#messagebox").hide()
                 this.getTopic()
                 /*$("#message").html(this.note)
                 $("#time").html(this.time)*/
