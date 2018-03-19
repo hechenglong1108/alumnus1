@@ -69,6 +69,7 @@
                         setTimeout(function(){
                             var index = parent.layer.getFrameIndex(window.name);
                             parent.layer.close(index);
+                            message.init()
                         },2000)
                     }else{
                         layer.msg(json.message)
