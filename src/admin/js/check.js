@@ -16,6 +16,21 @@ var check = {
                 return;
             }
 
+            $("#update").click(function(){
+                layer.open({
+                    type:2,
+                    area:['800px','600px'],
+                    title:'发布消息',
+                    shade:0.6,
+                    anim:2,
+                    content:'checkContent.html?messageType='+_selected.messageType+"&note="+_selected.note+"&time="+_selected.regTime+"&topicId="+_selected.topicId,
+                    yes : function(layero,index) {
+                        layer.close(index);
+                    }
+                })
+
+            })
+
         })
     },
     createtable: function() {
@@ -26,7 +41,6 @@ var check = {
             ,request: {limitName: 'size'}
             ,cols: [[
                 {checkbox: true}, //默认全选,
-                {field: 'note', title: '留言项目内容', width: 200},
                 {field: 'note', title: '留言内容', width: 200},
                 {field: 'trueName', title: '发布人姓名', width: 100},
                 {field: 'regTime', title: '发布时间', width: 150},
