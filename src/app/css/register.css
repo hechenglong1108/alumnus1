@@ -36,8 +36,8 @@
 .reg  ul  li  label  input {
     background: transparent;
     display: inline-block;
-    height: .6rem;
-    line-height: .6rem;
+    height: .8rem;
+    line-height: .8rem;
     width: 4rem;
     font-family: "PingFangSC-Regular";
     border: 1px solid #ddd;
@@ -47,8 +47,8 @@
 .reg  ul  li  label  select {
     background: transparent;
     display: inline-block;
-    height: .6rem;
-    line-height: .6rem;
+    height: .8rem;
+    line-height: .8rem;
     width: 4rem;
     font-family: "PingFangSC-Regular";
     border: 1px solid #ddd;
@@ -60,8 +60,8 @@
 .reg  ul  li.address  label  select {
     background: transparent;
     display: inline-block;
-    height: .6rem;
-    line-height: .6rem;
+    height: .8rem;
+    line-height: .8rem;
     width: 1.5rem;
     font-family: "PingFangSC-Regular";
     border: 1px solid #ddd;

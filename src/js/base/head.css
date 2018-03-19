@@ -7,13 +7,13 @@
     background-size: 0.35rem 0.35rem;
     position: absolute;
     left:0.2rem;
-    top:0.1rem;
+    top:0.35rem;
 }
 
 
 
 .head {
-    height: .6rem;
+    height: 1rem;
     width: 100%;
     position: relative;
     background: transparent;
@@ -21,8 +21,8 @@
 }
 
 .head > p {
-    height: .6rem;
-    line-height: .6rem;
+    height: 1rem;
+    line-height: 1rem;
     text-align: center;
     font-size: .26rem;
     font-family: "PingFangSC-Medium";
