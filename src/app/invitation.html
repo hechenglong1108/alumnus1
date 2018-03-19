@@ -29,14 +29,15 @@
         <p>邀请链接</p>
     </div>
     <div class="content">
-        <span>邀请链接</span><input class="lianjie" type="text" disabled="disabled" value="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAxODE2MjM1MA==&scene=124&#wechat_redirect">
+        <span>邀请链接</span><input id="foo" class="lianjie" type="text" disabled="disabled" value="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAxODE2MjM1MA==&scene=124&#wechat_redirect">
     </div>
-    <button class="copy" @click="copy">复制链接</button>
+    <button class="btn" data-clipboard-target="#foo">复制链接</button>
 </div>
 </div>
 </body>
 <!-- inject:js -->
 <!-- endinject -->
+<script src="js/clipboard.min.js"></script>
 <script>
     var invitation=new Vue({
         el:"#invitation",
@@ -56,6 +57,16 @@
         },
         created(){
             Base.judgelogin("login.html")
+            //init
+            var clipboard = new Clipboard('.btn');
+//优雅降级:safari 版本号>=10,提示复制成功;否则提示需在文字选中后，手动选择“拷贝”进行复制
+            clipboard.on('success', function(e) {
+                Base.Messager.open("复制成功")
+                e.clearSelection();
+            });
+            clipboard.on('error', function(e) {
+                alert('请选择“拷贝”进行复制!')
+            });
         }
     })
 </script>
