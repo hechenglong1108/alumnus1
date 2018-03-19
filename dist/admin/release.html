@@ -48,11 +48,11 @@
         addevent: function() {
             var _inThis = this;
             $("#fabu").click(function(){
-                if(!$("#topics").val()*1){
+                if(!$("#topics").val()){
                     layer.msg("请输入内容")
                     return;
                 }
-                if(!$("#types").val()){
+                if(!$("#types").val()*1){
                     layer.msg("请选择分类")
                     return;
                 }
