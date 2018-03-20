@@ -32,6 +32,7 @@ var login=new Vue({
                 if(json.code*1 == 1){
                     /*Base.Messager.open("登录成功")*/
                     Base.setCookies("uid",json.data.uid)
+                    Base.setCookies("cid",json.data.cid)
                     setTimeout(function(){
                         Base.Messager.hideLoading()
                         location.href = 'index.html'

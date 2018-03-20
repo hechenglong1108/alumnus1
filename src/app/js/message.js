@@ -39,6 +39,11 @@ var message=new Vue({
                     _inThis.page++;
                     // 拼接HTML
                     var _url ='/api/dop/topics/page?checkStatus=2&type=' + _type + "&page=" +_inThis.page+'&size='+_inThis.size;
+
+                    if(_inThis.type*1 == 1){
+                        _url ='/api/dop/topics/page?checkStatus=2&uid=' + Base.getCookies("uid") +"&classId="+localStorage.getItem("cid")+ "&page=" +_inThis.page+'&size='+_inThis.size;
+                    }
+
                     if(_inThis.type*1 == 2){
                         _url ='/api/dop/topics/page?checkStatus=2&uid=' + Base.getCookies("uid") + "&page=" +_inThis.page+'&size='+_inThis.size;
                     }
