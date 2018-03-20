@@ -33,6 +33,8 @@ var login=new Vue({
                     /*Base.Messager.open("登录成功")*/
                     Base.setCookies("uid",json.data.uid)
                     Base.setCookies("cid",json.data.cid)
+                    localStorage.setItem("name",_inThis.mobile)
+                    localStorage.setItem('pass',_inThis.identity)
                     setTimeout(function(){
                         Base.Messager.hideLoading()
                         location.href = 'index.html'

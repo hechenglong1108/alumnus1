@@ -116,6 +116,7 @@ var login=new Vue({
                 if(json.code*1 == 1){
                     Base.Messager.hideLoading();
                     Base.setCookies("uid",json.data.uid)
+                    Base.setCookies("cid",json.data.cid)
                     location.href = 'index.html'
                     localStorage.setItem("name",_inThis.mobile)
                     localStorage.setItem('pass',_inThis.identity)
