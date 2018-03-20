@@ -45,7 +45,7 @@ var message=new Vue({
                     }
 
                     if(_inThis.type*1 == 2){
-                        _url ='/api/dop/topics/page?checkStatus=2&uid=' + Base.getCookies("uid") + "&page=" +_inThis.page+'&size='+_inThis.size;
+                        _url ='/api/dop/topics/page?isMe=1&checkStatus=2&uid=' + Base.getCookies("uid") + "&page=" +_inThis.page+'&size='+_inThis.size;
                     }
                     $.ajax({
                         type: 'GET',
