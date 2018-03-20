@@ -14,12 +14,12 @@ var reglist = {
         $("#shuaxin").click(function () {
             _inThis.createtable()
         })
-        $("#update").click(function(){
+        /*$("#update").click(function(){
             var _selected = table.checkStatus('testReload').data;
-            /*if(_selected.length != 1) {
+            /!*if(_selected.length != 1) {
                 layer.msg('请选择一条数据。。', {icon: 5});
                 return;
-            }*/
+            }*!/
             if(!Base.isadmin){
                 Base.Messager.open("您的账号不是管理员，请登录管理员账号");
                 setTimeout(function(){
@@ -43,7 +43,7 @@ var reglist = {
 
 
 
-        })
+        })*/
 
         $("#import").click(function(){
             if(!Base.isadmin){
