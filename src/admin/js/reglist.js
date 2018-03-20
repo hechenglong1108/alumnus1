@@ -16,16 +16,32 @@ var reglist = {
         })
         $("#update").click(function(){
             var _selected = table.checkStatus('testReload').data;
-            if(_selected.length != 1) {
+            /*if(_selected.length != 1) {
                 layer.msg('请选择一条数据。。', {icon: 5});
                 return;
-            }
+            }*/
             if(!Base.isadmin){
                 Base.Messager.open("您的账号不是管理员，请登录管理员账号");
                 setTimeout(function(){
                     location.href = 'login.html'
                 },2000)
             }
+
+            Base.loadJson({
+                url:"/api/dop/found/alumnus/list/export",
+                data:{
+                    activationStatus:1
+                },
+                type:"get"
+            },function(json){
+                if(json.code*1 == 1){
+                    layer.msg("导出成功")
+                }else{
+                    layer.msg(json.message)
+                }
+            })
+
+
 
         })
 
