@@ -3,6 +3,7 @@ var Base = {
     _pageSize: 20,
     _dataType: "web", //数据来源方式 目前考虑 webapp:嵌入APP运行、web：h5运行模式 默认web
     islogin: false,
+    isadmin:false,
     /*判断是否登录*/
     judgelogin:function(_url){
         var _inThis=this;
@@ -14,11 +15,65 @@ var Base = {
                 _inThis.islogin=true;
             }else{
                 _inThis.islogin=false;
+                var _name = localStorage.getItem("name"),
+                    _pass = localStorage.getItem("pass")
+                if(_name && _pass){
+                    Base.loadJson({
+                        url:"/api/wns/admin/login",
+                        type:"post",
+                        data:{
+                            un: _name,
+                            pass: _pass
+                        }
+                    },function(json){
+                        if(json.code*1 == 1){
+                            /*Base.Messager.open("登录成功")*/
+
+                        }else{
+                            Base.Messager.open(json.message)
+                        }
+                    })
+                }else{
+                    location.href = 'register.html'
+                }
+
+
+                /*Base.Messager.open("系统检测到您未登录，请登录");
+                setTimeout(function(){
+                    location.href = _url
+                },2000)*/
+
+            }
+        })
+    },
+
+
+
+
+    /*判断是否登录*/
+    judgeadminlogin:function(_url){
+        var _inThis=this;
+        Base.loadJsonNoAsync({
+            url:"/api/wns/admin/login",
+            type:"get",
+        },function(json){
+            if(json.code*1 == 1){
+                _inThis.islogin=true;
+                if(json.data.type*1 != 1){
+                    Base.Messager.open("您的账号不是管理员，请登录管理员账号");
+                    setTimeout(function(){
+                        location.href = _url
+                    },2000)
+                }else {
+                    _inThis.isadmin = true
+                }
+            }else{
+                _inThis.islogin=false;
                 Base.Messager.open("系统检测到您未登录，请登录");
                 setTimeout(function(){
                     location.href = _url
                 },2000)
-                return;
+
             }
         })
     },

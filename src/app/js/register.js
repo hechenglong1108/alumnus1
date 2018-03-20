@@ -117,6 +117,8 @@ var login=new Vue({
                     Base.Messager.hideLoading();
                     Base.setCookies("uid",json.data.uid)
                     location.href = 'index.html'
+                    localStorage.setItem("name",_inThis.mobile)
+                    localStorage.setItem('pass',_inThis.identity)
                     /*Base.Messager.open("登录成功")
                     setTimeout(function(){
                         location.href = 'index.html'
