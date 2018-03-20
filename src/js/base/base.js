@@ -60,7 +60,7 @@ var Base = {
             if(json.code*1 == 1){
                 _inThis.islogin=true;
                 if(json.data.type*1 != 1){
-                    Base.Messager.open("您的账号不是管理员，请登录管理员账号");
+                    layer.msg("您的账号不是管理员，请登录管理员账号");
                     setTimeout(function(){
                         location.href = _url
                     },2000)
@@ -69,7 +69,7 @@ var Base = {
                 }
             }else{
                 _inThis.islogin=false;
-                Base.Messager.open("系统检测到您未登录，请登录");
+                layer.msg("系统检测到您未登录，请登录");
                 setTimeout(function(){
                     location.href = _url
                 },2000)

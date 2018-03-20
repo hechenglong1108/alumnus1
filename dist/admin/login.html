@@ -107,11 +107,15 @@
                 type:"POST"
             },function(json){
                 if(json.code*1 == 1){
-                    Base.Messager.open("登录成功")
-                    Base.setCookies("uid",json.data.uid)
-                    setTimeout(function () {
-                        location.href = "reglist.html"
-                    },2000)
+                    if(json.data.type*1 != 1){
+                        layer.msg("您的账号不是管理员，请登录管理员账号");
+                    }else{
+                        layer.msg("登录成功")
+                        Base.setCookies("uid",json.data.uid)
+                        setTimeout(function () {
+                            location.href = "reglist.html"
+                        },2000)
+                    }
                 }else{
                     Base.Messager.open(json.message)
                 }
