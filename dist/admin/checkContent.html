@@ -70,6 +70,7 @@
 <script src="../js/base/layer.js?v=1.0.0"></script>
 <script src="../js/base/base.js?v=1.0.0"></script>
 <script src="js/layui/layui.all.js"></script>
+<script src="js/check.js"></script>
 <script>
     /**
      * Created by hcl on 2018/3/15
@@ -153,6 +154,8 @@
                     setTimeout(function(){
                         var index = parent.layer.getFrameIndex(window.name);
                         parent.layer.close(index);
+                        check.createtable()
+
                     },2000)
                 }else{
                     layer.msg(json.message)
@@ -175,6 +178,7 @@
                     setTimeout(function(){
                         var index = parent.layer.getFrameIndex(window.name);
                         parent.layer.close(index);
+                        check.createtable()
                     },2000)
                 }else{
                     layer.msg(json.message)
