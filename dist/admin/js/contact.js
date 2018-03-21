@@ -1,9 +1,13 @@
 /**
+ * Created by hcl on 2018/3/21
+ */
+
+/**
  * Created by hcl on 2018/3/15
  */
 
 
-var reglist = {
+var contact = {
     init: function(){
         Base.judgeadminlogin("login.html")
         this.addevent();
@@ -14,26 +18,33 @@ var reglist = {
         $("#shuaxin").click(function () {
             _inThis.createtable()
         })
-        $("#output").click(function(){
+        $("#delete").click(function(){
             if(!Base.isadmin){
                 Base.Messager.open("您的账号不是管理员，请登录管理员账号");
                 setTimeout(function(){
                     location.href = 'login.html'
                 },2000)
             }
-            layer.open({
-                type:2,
-                area:['800px','600px'],
-                title:'导出校友信息',
-                shade:0.6,
-                anim:2,
-                content:'output.html',
-                yes : function(layero,index) {
-                    layer.close(index);
+            alert("删除")
+            var _selected = table.checkStatus('testReload').data;
+            if(_selected.length != 1) {
+                layer.msg('请选择一条数据。。', {icon: 5});
+                return;
+            }
+            Base.loadJson({
+                url:"/api/wns/user/company/list",
+                data:{
+                    type:2
+                },
+                type:"get"
+            },function(json){
+                if(json.code*1 == 1 ){
+
+                }else{
+                    console.log(json.message)
                 }
             })
         })
-
 
         $("#import").click(function(){
             if(!Base.isadmin){
@@ -45,10 +56,10 @@ var reglist = {
             layer.open({
                 type:2,
                 area:['800px','600px'],
-                title:'导入校友信息',
+                title:'添加学院信息',
                 shade:0.6,
                 anim:2,
-                content:'import.html',
+                content:'inputContact.html',
                 yes : function(layero,index) {
                     layer.close(index);
                 }
@@ -86,5 +97,5 @@ var reglist = {
 
 layui.use('table', function(){
     window.table = layui.table;
-    reglist.init();
+    contact.init();
 });

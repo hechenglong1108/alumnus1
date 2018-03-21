@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>机械校友</title>
+    <link rel="stylesheet" href="js/layui/css/layui.css">
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+
+
+<div>
+    <ul class="header">
+        <li><a href="reglist.html">注册列表</a></li>
+        <li ><a href="check.html">留言审核</a></li>
+        <li><a href="message.html">发布信息</a></li>
+        <li class="active"><a href="contact.html">学院信息管理</a></li>
+    </ul>
+</div>
+
+<blockquote class="layui-elem-quote mylog-info-tit">
+    <!--按钮操作区域-->
+    <button data-method="offset" data-type="auto" id="shuaxin" class="layui-btn">刷新</button>
+    <a  data-method="offset" data-type="auto" id="delete" class="layui-btn layui-btn layui-btn-danger">删除</a>
+    <button data-method="offset" data-type="auto" id="import" class="layui-btn layui-btn-normal">上传</button>
+</blockquote>
+<table id="list" lay-filter="test"></table>
+</body>
+
+<script type="text/html" id="titleTpl1">
+    {{#  if(d.personProvinceName){ }}
+    <span>{{d.personProvinceName}}{{d.personCityName}}{{d.personAreaName}}{{d.personAddr}}</span>
+    {{#  } else { }}
+    <span style="color:red;">---</span>
+    {{#  } }}
+</script>
+<script src="../js/base/jquery.js?v=1.0.0"></script>
+<script src="../js/base/layer.js?v=1.0.0"></script>
+<script src="../js/base/base.js?v=1.0.0"></script>
+<script src="js/layui/layui.all.js"></script>
+<script src="js/contact.js"></script>
+</html>
