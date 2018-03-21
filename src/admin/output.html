@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <title>机械校友</title>
     <link rel="stylesheet" href="js/layui/css/layui.css">
+    <style>
+        select{
+            width: 200px;
+            height: 30px;
+        }
+        label{
+            display: block;
+            float: left;
+            width: 70px;
+        }
+        .box{
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
 <div style="padding: 20px">
 
-    <form class="layui-form" action="">
-        <div class="layui-form-item">
-            <label class="layui-form-label">毕业年份</label>
-            <div class="layui-input-block">
-                <select name="year" id="years" lay-verify="required">
+<div class="box">
 
-                </select>
-            </div>
-        </div>
+    <label >毕业年份:</label>
+    <select name="year" id="years" lay-verify="required">
 
-        <div class="layui-form-item">
-            <label class="layui-form-label">班级</label>
-            <div class="layui-input-block">
-                <select name="year" id="cla" lay-verify="required">
+    </select>
 
-                </select>
-            </div>
-        </div>
-    </form>
+</div>
+    <div class="box">
+        <label >班级:</label>
+        <select name="year" id="cla" lay-verify="required">
+
+        </select>
+    </div>
+
     <div class="layui-form"  style="margin-top: 30px">
         <a href="" id="output" data-method="offset" data-type="auto" id="fabu" class="layui-btn" style="margin-top: 30px;margin-left: 100px">导出</a>
         <button data-method="offset" data-type="auto" id="close" class="layui-btn" style="margin-top: 30px;margin-left: 40px">关闭</button>
@@ -37,7 +47,7 @@
 <script src="../js/base/layer.js?v=1.0.0"></script>
 <script src="../js/base/base.js?v=1.0.0"></script>
 <script src="js/layui/layui.all.js"></script>
-<script src="js/message.js"></script>
+<!--<script src="js/message.js"></script>-->
 <script>
     /**
      * Created by hcl on 2018/3/15
