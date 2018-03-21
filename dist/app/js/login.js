@@ -41,6 +41,7 @@ var login=new Vue({
                     },1000)
                 }else{
                     Base.Messager.open(json.message)
+                    Base.Messager.hideLoading()
                 }
             })
         }
