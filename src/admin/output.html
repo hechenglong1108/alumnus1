@@ -47,6 +47,7 @@
     var reglist = {
         init: function(){
             this.addevent();
+            this.getYear()
         },
         getYear: function(){
             Base.loadJson({
@@ -101,7 +102,7 @@
                     layer.msg("请选择需要导出的学生的毕业年份")
                 }
             })
-            
+
             var index = parent.layer.getFrameIndex(window.name);
             $("#close").click(function(){
                 parent.layer.close(index); //执行关闭
