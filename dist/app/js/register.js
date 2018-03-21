@@ -18,6 +18,7 @@ var login=new Vue({
         department:"",
         post:"",
         mobile:"",
+        moblieStatus:"",
         heads:"",
         isuser:0,/*是否通过身份验证*/
         yearList:[],/*届数组*/
@@ -71,6 +72,10 @@ var login=new Vue({
 
             if(!this.mobile){
                 Base.Messager.open("请输入手机号码")
+                return;
+            }
+            if(!this.moblieStatus){
+                Base.Messager.open("请选择手机号是否公开")
                 return;
             }
             if(!$("#headerss").val()){

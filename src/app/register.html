@@ -17,7 +17,10 @@
     <script src="../js/base/adapter.js"></script>
     <link rel="stylesheet" href="css/register.css">
     <style>
-
+        .reg ul li .rad input{
+            width: .3rem;
+            height: .3rem;
+        }
     </style>
 </head>
 <body>
@@ -125,10 +128,15 @@
                     <li>
                         <label for="">
                             <i>是否公开:</i>
-                            <input type="radio" name="moblieStatus" value="1">不公开
-                            <input type="radio" name="moblieStatus" value="2">同班可见
-                            <input type="radio" name="moblieStatus" value="1">同年级可见
-                            <input type="radio" name="moblieStatus" value="1">全部人可见
+
+                            <select name="moblieStatus" v-model="moblieStatus">
+                                <option value="">请选择</option>
+                                <option value="1">不公开</option>
+                                <option value="2">同班可见</option>
+                                <option value="3">同年级可见</option>
+                                <option value="4">全部人可见</option>
+                            </select>
+
                         </label>
                     </li>
                     <li>
