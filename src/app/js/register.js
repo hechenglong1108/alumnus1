@@ -119,12 +119,13 @@ var login=new Vue({
                 }
             },function(json){
                 if(json.code*1 == 1){
+                    localStorage.setItem("name",_inThis.mobile)
+                    localStorage.setItem('pass',_inThis.idetify)
                     Base.Messager.hideLoading();
                     Base.setCookies("uid",json.data.uid)
                     Base.setCookies("cid",json.data.cid)
                     location.href = 'index.html'
-                    localStorage.setItem("name",_inThis.mobile)
-                    localStorage.setItem('pass',_inThis.identity)
+
                     /*Base.Messager.open("登录成功")
                     setTimeout(function(){
                         location.href = 'index.html'
