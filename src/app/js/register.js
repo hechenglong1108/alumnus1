@@ -75,7 +75,7 @@ var login=new Vue({
                 return;
             }
             if(!Base.Tools.isMobile(this.mobile)){
-                Base.Messager.open("请输入手机号码")
+                Base.Messager.open("请输入正确的手机号码")
                 return;
             }
             if(!this.moblieStatus){
