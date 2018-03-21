@@ -14,6 +14,25 @@ var reglist = {
         $("#shuaxin").click(function () {
             _inThis.createtable()
         })
+        $("#output").click(function(){
+            if(!Base.isadmin){
+                Base.Messager.open("您的账号不是管理员，请登录管理员账号");
+                setTimeout(function(){
+                    location.href = 'login.html'
+                },2000)
+            }
+            layer.open({
+                type:2,
+                area:['800px','600px'],
+                title:'导出校友信息',
+                shade:0.6,
+                anim:2,
+                content:'output.html',
+                yes : function(layero,index) {
+                    layer.close(index);
+                }
+            })
+        })
         /*$("#update").click(function(){
             var _selected = table.checkStatus('testReload').data;
             /!*if(_selected.length != 1) {

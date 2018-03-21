@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>机械校友</title>
+    <link rel="stylesheet" href="js/layui/css/layui.css">
+</head>
+<body>
+<div style="padding: 20px">
+
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">毕业年份</label>
+            <div class="layui-input-block">
+                <select name="year" id="years" lay-verify="required">
+
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">班级</label>
+            <div class="layui-input-block">
+                <select name="year" id="cla" lay-verify="required">
+
+                </select>
+            </div>
+        </div>
+    </form>
+    <div class="layui-form"  style="margin-top: 30px">
+        <a href="" id="output" data-method="offset" data-type="auto" id="fabu" class="layui-btn" style="margin-top: 30px;margin-left: 100px">导出</a>
+        <button data-method="offset" data-type="auto" id="close" class="layui-btn" style="margin-top: 30px;margin-left: 40px">关闭</button>
+    </div>
+</div>
+</body>
+<script src="../js/base/jquery.js?v=1.0.0"></script>
+<script src="../js/base/layer.js?v=1.0.0"></script>
+<script src="../js/base/base.js?v=1.0.0"></script>
+<script src="js/layui/layui.all.js"></script>
+<script src="js/message.js"></script>
+<script>
+    /**
+     * Created by hcl on 2018/3/15
+     */
+
+
+    var reglist = {
+        init: function(){
+            this.addevent();
+        },
+        getYear: function(){
+            Base.loadJson({
+                url:"/api/wns/user/company/list",
+                data:{
+                    type:2
+                },
+                type:"get"
+            },function(json){
+                if(json.code*1 == 1 ){
+                    var _html = '<option value="">请选择</option>'
+                    for(var i=0;i<json.rows.length;i++){
+                        _html += '<option value="'+json.rows[i].cid+'">'+json.rows[i].name+'</option>'
+                    }
+                    $("#years").html(_html)
+                }else{
+                    console.log(json.message)
+                }
+            })
+        },
+        addevent: function() {
+            var _inThis = this;
+
+            $("#years").change(function(){
+                $("#output").attr("href","/api/dop/found/alumnus/list/export?activationStatus=1"+"&graduationId="+$("#years").val())
+                Base.loadJson({
+                    url:"/api/wns/user/company/list",
+                    data:{
+                        type:3,
+                        cid:$("#years").val()
+                    },
+                    type:"get"
+                },function(json){
+                    if(json.code*1 == 1 ){
+                        var _html = '<option value="">全部</option>'
+                        for(var i=0;i<json.rows.length;i++){
+                            _html += '<option value="'+json.rows[i].cid+'">'+json.rows[i].name+'</option>'
+                        }
+                        $("#cla").html(_html)
+                    }else{
+                        console.log(json.message)
+                    }
+                })
+            })
+
+            $("#cla").change(function(){
+                $("#output").attr("href","/api/dop/found/alumnus/list/export?activationStatus=1"+"&graduationId="+$("#years").val()+"&classId="+$("#cla").val())
+            })
+
+            $("#output").click(function(){
+                if(!$("#output").attr("href")){
+                    layer.msg("请选择需要导出的学生的毕业年份")
+                }
+            })
+            
+            var index = parent.layer.getFrameIndex(window.name);
+            $("#close").click(function(){
+                parent.layer.close(index); //执行关闭
+            })
+        }
+    }
+
+    $(function(){
+        reglist.init();
+    })
+
+
+</script>
+</html>
