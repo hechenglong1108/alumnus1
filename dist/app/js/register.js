@@ -74,6 +74,10 @@ var login=new Vue({
                 Base.Messager.open("请输入手机号码")
                 return;
             }
+            if(!Base.Tools.isMobile(this.mobile)){
+                Base.Messager.open("请输入手机号码")
+                return;
+            }
             if(!this.moblieStatus){
                 Base.Messager.open("请选择手机号是否公开")
                 return;
