@@ -30,7 +30,7 @@
         <ul class="Box">
             <template v-for="item in classList">
                 <li class="reg students" :class="{'reg students':item.activationStatus*1 == 1,'noreg students':item.activationStatus*1 == 2}">
-                    <h5 v-cloak><span>{{item.trueName}}</span><span>手机号码：{{item.mobile}}</span></h5>
+                    <h5 v-cloak><span>{{item.trueName}}</span><span style="display: none;" v-show="item.moblieStatus*1 == 2">手机号码：{{item.mobile}}</span></h5>
 
                     <p v-cloak>所在地区:<span>{{item.personProvinceName}}{{item.personCityName}}{{item.personAreaName}}{{item.personAddr}}</span></p>
                     <p v-cloak>单位：<span style="margin-left: .2rem">{{item.company}}</span>职务：<span>{{item.position}}</span></p>
