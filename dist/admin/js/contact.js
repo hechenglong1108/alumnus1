@@ -78,7 +78,7 @@ var contact = {
             ,request: {limitName: 'size'}
             ,cols: [[
                 {checkbox: true}, //默认全选,
-                {field: 'content', title: '内容', width: 3000},
+                {field: 'content', title: '内容', width: 300},
                 {field: 'timeH', title: '添加时间', width: 200},
                 {field: 'fid', title: '图片', width: 300,templet: '#titleTpl1'}
             ]],
