@@ -39,6 +39,7 @@ var contact = {
             },function(json){
                 if(json.code*1 == 1 ){
                     layer.msg(json.message || "删除成功")
+                    _inThis.createtable()
                 }else{
                     layer.msg(json.message)
                 }

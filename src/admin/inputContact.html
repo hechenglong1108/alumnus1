@@ -39,6 +39,7 @@
 <script src="../js/base/layer.js?v=1.0.0"></script>
 <script src="../js/base/base.js?v=1.0.0"></script>
 <script src="js/layui/layui.all.js"></script>
+<script src="js/contact.js"></script>
 
 <script>
     /**
@@ -77,6 +78,7 @@
                     success: function (json) {
                         if (json.code * 1 == 1) {
                             layer.msg(json.message || "导入成功")
+                            contact.createtable()
                             setTimeout(function(){
                                 var index = parent.layer.getFrameIndex(window.name);
                                 parent.layer.close(index); //执行关闭
