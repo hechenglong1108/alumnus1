@@ -73,11 +73,12 @@
             getdata: function(){
                 var _inThis = this;
                 Base.loadJson({
-                    url:"",
+                    url:"/dop/leader/info/page",
                     data:{
-
+                        page:1,
+                        size:100
                     },
-                    type:""
+                    type:"get"
                 },function(json){
                     if(json.code*1 == 1){
                         _inThis.list = json.rows

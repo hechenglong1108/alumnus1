@@ -32,16 +32,16 @@ var contact = {
                 return;
             }
             Base.loadJson({
-                url:"/api/wns/user/company/list",
+                url:"/api/dop/leader/info/delete",
                 data:{
-                    type:2
+                    id:_selected[0].id
                 },
                 type:"get"
             },function(json){
                 if(json.code*1 == 1 ){
-
+                    layer.msg(json.message || "删除成功")
                 }else{
-                    console.log(json.message)
+                    layer.msg(json.message)
                 }
             })
         })
@@ -78,8 +78,8 @@ var contact = {
             ,request: {limitName: 'size'}
             ,cols: [[
                 {checkbox: true}, //默认全选,
-                {field: 'content', title: '内容', width: 120},
-                {field: 'timeH', title: '添加时间', width: 120},
+                {field: 'content', title: '内容', width: 3000},
+                {field: 'timeH', title: '添加时间', width: 200},
                 {field: 'fid', title: '图片', width: 300,templet: '#titleTpl1'}
             ]],
             page: true
