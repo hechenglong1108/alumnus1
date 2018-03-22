@@ -60,10 +60,10 @@ var contact = {
             layer.open({
                 type:2,
                 area:['800px','600px'],
-                title:'添加学院信息',
+                title:'查看信息',
                 shade:0.6,
                 anim:2,
-                content:'inputContact.html?id=' + _selected[0].id,
+                content:'read.html?id=' + _selected[0].id,
                 yes : function(layero,index) {
                     layer.close(index);
                 }
