@@ -25,7 +25,6 @@ var contact = {
                     location.href = 'login.html'
                 },2000)
             }
-            alert("删除")
             var _selected = table.checkStatus('testReload').data;
             if(_selected.length != 1) {
                 layer.msg('请选择一条数据。。', {icon: 5});
@@ -36,7 +35,7 @@ var contact = {
                 data:{
                     id:_selected[0].id
                 },
-                type:"get"
+                type:"post"
             },function(json){
                 if(json.code*1 == 1 ){
                     layer.msg(json.message || "删除成功")
