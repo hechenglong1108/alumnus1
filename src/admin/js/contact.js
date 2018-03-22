@@ -45,6 +45,31 @@ var contact = {
             })
         })
 
+        $("#read").click(function(){
+            if(!Base.isadmin){
+                Base.Messager.open("您的账号不是管理员，请登录管理员账号");
+                setTimeout(function(){
+                    location.href = 'login.html'
+                },2000)
+            }
+            var _selected = table.checkStatus('testReload').data;
+            if(_selected.length != 1) {
+                layer.msg('请选择一条数据。。', {icon: 5});
+                return;
+            }
+            layer.open({
+                type:2,
+                area:['800px','600px'],
+                title:'添加学院信息',
+                shade:0.6,
+                anim:2,
+                content:'inputContact.html?id=' + _selected[0].id,
+                yes : function(layero,index) {
+                    layer.close(index);
+                }
+            })
+        })
+
         $("#import").click(function(){
             if(!Base.isadmin){
                 Base.Messager.open("您的账号不是管理员，请登录管理员账号");
