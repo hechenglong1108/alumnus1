@@ -67,9 +67,9 @@
                 type:"get"
             },function(json){
                 if(json.code*1 == 1){
-                    var _img = '<img href="/api/dop/file/get?fid='+json.data.fid+'&style=origin">'
+                    var _img = '图片：<img src="/api/dop/file/get?fid='+json.data.fid+'&style=origin">'
                     $(".imgbox").html(_img)
-                    $(".content").html(json.data.content)
+                    $(".content").html("内容："+json.data.content)
                 }else{
                     console.log(json.message)
                 }
