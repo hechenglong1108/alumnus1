@@ -45,7 +45,7 @@
             <div class="imgbox">
                 <img :src="'/api/dop/file/get?fid='+item.fid + '&style=origin'" alt="">
             </div>
-            <p>{{item.content}}</p>
+            <p v-cloak>{{item.content}}</p>
         </li>
     </ul>
 </div>
@@ -84,6 +84,7 @@
         },
         created(){
             Base.judgelogin("login.html")
+            this.getdata()
         }
     })
 
