@@ -41,23 +41,11 @@
         <p>联系学院</p>
     </div>
     <ul>
-        <li class="box">
+        <li class="box" v-for="item in list">
             <div class="imgbox">
-                <img src="images/timg.jpeg" alt="">
+                <img :src="'/api/dop/file/get?fid='+item.fid + '&style=origin'" alt="">
             </div>
-            <p>首先提一个要求，不要骂人，不要侮辱人，你可以不看的，谢谢！ 我的基本情况是：我有一个工作的，相对还算稳定，用他们的话说就是饿不死，富不了，我自己感觉是过的紧紧的。</p>
-        </li>
-        <li class="box">
-            <div class="imgbox">
-                <img src="images/timg.jpeg" alt="">
-            </div>
-            <p>首先提一个要求，不要骂人，不要侮辱人，你可以不看的，谢谢！ 我的基本情况是：我有一个工作的，相对还算稳定，用他们的话说就是饿不死，富不了，我自己感觉是过的紧紧的。</p>
-        </li>
-        <li class="box">
-            <div class="imgbox">
-                <img src="images/timg.jpeg" alt="">
-            </div>
-            <p>首先提一个要求，不要骂人，不要侮辱人，你可以不看的，谢谢！ 我的基本情况是：我有一个工作的，相对还算稳定，用他们的话说就是饿不死，富不了，我自己感觉是过的紧紧的。</p>
+            <p>{{item.content}}</p>
         </li>
     </ul>
 </div>
@@ -70,11 +58,27 @@
     var login=new Vue({
         el:"#login",
         data:{
-            classList:[]
+            list:[]
         },
         methods:{
             goback: function(){
                 history.go(-1)
+            },
+            getdata: function(){
+                var _inThis = this;
+                Base.loadJson({
+                    url:"",
+                    data:{
+
+                    },
+                    type:""
+                },function(json){
+                    if(json.code*1 == 1){
+                        _inThis.list = json.rows
+                    }else{
+                        console.log(json.message)
+                    }
+                })
             }
         },
         created(){

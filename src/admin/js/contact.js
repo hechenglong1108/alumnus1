@@ -73,21 +73,14 @@ var contact = {
     createtable: function() {
         table.render({
             elem: '#list' //指定原始表格元素选择器（推荐id选择器）
-            ,url:"/api/dop/found/alumnus/list?activationStatus=1"
+            ,url:"/api/dop/leader/info/page"
             ,response: {statusName: 'code',statusCode: 1,countName:'total',dataName:'rows'}
             ,request: {limitName: 'size'}
             ,cols: [[
                 {checkbox: true}, //默认全选,
-                {field: 'trueName', title: '姓名', width: 120},
-                {field: 'personAfter', title: '身份证后六位', width: 120},
-                {field: 'graduationYear', title: '毕业年份', width: 100},
-                {field: 'className', title: '班级', width: 150},
-                {field: 'licenseNo', title: '所在地区', width: 300,templet: '#titleTpl1'},
-                {field: 'company', title: '单位名称', width: 150},
-                {field: 'department', title: '所在部门', width: 150},
-                {field: 'position', title: '职务', width: 100},
-                {field: 'mobile', title: '手机号码', width: 150},
-                {field: 'regionTime', title: '注册时间', width: 100,}
+                {field: 'content', title: '内容', width: 120},
+                {field: 'timeH', title: '添加时间', width: 120},
+                {field: 'fid', title: '图片', width: 300,templet: '#titleTpl1'}
             ]],
             page: true
             ,id:'testReload'

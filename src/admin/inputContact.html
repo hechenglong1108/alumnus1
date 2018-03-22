@@ -25,12 +25,12 @@
 
         <div class="box">
             <label for="">文字：</label>
-            <textarea name="" id="texts" cols="30" rows="10" style="vertical-align: top"></textarea>
+            <textarea name="content" id="texts" cols="30" rows="10" style="vertical-align: top"></textarea>
         </div>
 
     </form>
     <div class="layui-form"  style="margin-top: 30px">
-        <button data-method="offset" data-type="auto" id="fabu" class="layui-btn" style="margin-top: 30px;margin-left: 100px">导入</button>
+        <button data-method="offset" data-type="auto" id="fabu" class="layui-btn" style="margin-top: 30px;margin-left: 100px">上传</button>
         <button data-method="offset" data-type="auto" id="close" class="layui-btn" style="margin-top: 30px;margin-left: 40px">关闭</button>
     </div>
 </div>
@@ -62,13 +62,13 @@
                     return;
                 }
                 if(!$("#texts").val()){
-                    layer.msg("请选择图片")
+                    layer.msg("请输入介绍")
                     return;
                 }
 
                 $.ajax({
                     type: 'post',
-                    url: '/api/wns/excel/import',
+                    url: '/api/dop/leader/info/add',
                     cache: false,    //上传文件不需缓存
                     processData: false, //需设置为false。因为data值是FormData对象，不需要对数据做处理
                     contentType: false, //需设置为false。因为是FormData对象，且已经声明了属性enctype="multipart/form-data"
