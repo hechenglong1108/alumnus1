@@ -177,6 +177,7 @@ var message=new Vue({
                     },function(json){
                         if(json.code*1 == 1){
                             Base.Messager.open("删除成功")
+                            location.href = 'message.html?type=2'
                         }else{
                             Base.Messager.open(json.message)
                         }
@@ -199,6 +200,7 @@ var message=new Vue({
                     },function(json){
                         if(json.code*1 == 1){
                             Base.Messager.open("删除成功")
+                            location.href = 'message.html?type=2'
                         }else{
                             Base.Messager.open(json.message)
                         }
