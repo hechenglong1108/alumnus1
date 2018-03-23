@@ -29,14 +29,16 @@
 
         <button class="release" @click="release">发布</button>
     </div>
-
-    <div class="commentbox" v-show="ispinglun"style="display: none" >
-        <div class="pinglun">
-            <textarea name=""  cols="30" rows="3" class="pingluntexts" placeholder="请输入内容..." v-model="pingluncontent"></textarea>
-            <button class="pinglunbtn deletepinglun" @click="deletepinglun">取消</button>
-            <button class="pinglunbtn releasepinglun" @click="releasepinglun">发布</button>
+    <div v-show="ispinglun" style="position:relative;z-index: 100000 ">
+        <div class="commentbox" style="display: none" >
+            <div class="pinglun">
+                <textarea name=""  cols="30" rows="3" class="pingluntexts" placeholder="请输入内容..." v-model="pingluncontent"></textarea>
+                <button class="pinglunbtn deletepinglun" @click="deletepinglun">取消</button>
+                <button class="pinglunbtn releasepinglun" @click="releasepinglun">发布</button>
+            </div>
         </div>
     </div>
+
     <div class="list">
         <ul class="Box">
             <template v-for="item in messageList">
