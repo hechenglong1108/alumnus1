@@ -160,7 +160,53 @@ var message=new Vue({
                     Base.Messager.open(json.message);
                 }
             })
+        },
+
+        /*删除话题*/
+        deletetops: function(_tId){
+            var _inThis = this;
+            Base.Messager.confirm({
+                msg:"确定删除该留言项目？",
+                yes:function(){
+                    Base.loadJson({
+                        url:"/api/dop/topics/del",
+                        data:{
+                            tId:_tId
+                        },
+                        type:"POST"
+                    },function(json){
+                        if(json.code*1 == 1){
+                            Base.Messager.open("删除成功")
+                        }else{
+                            Base.Messager.open(json.message)
+                        }
+                    })
+                }
+            })
+        },
+        /*删除留言*/
+        deleteMessage: function(_id){
+            var _inThis = this;
+            Base.Messager.confirm({
+                msg:"确定删除该留言？",
+                yes:function(){
+                    Base.loadJson({
+                        url:"/api/dop/leave/message/del",
+                        data:{
+                            id:_id
+                        },
+                        type:"POST"
+                    },function(json){
+                        if(json.code*1 == 1){
+                            Base.Messager.open("删除成功")
+                        }else{
+                            Base.Messager.open(json.message)
+                        }
+                    })
+                }
+            })
         }
+
     },
     created(){
         Base.judgelogin("login.html")
