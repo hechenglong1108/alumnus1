@@ -32,7 +32,7 @@ var message = {
             Base.loadJson({
                 url:"/api/dop/topics/del",
                 data:{
-                    tid:_selected[0].tid
+                    tId:_selected[0].tId
                 },
                 type:"post"
             },function(json){
