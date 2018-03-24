@@ -41,7 +41,7 @@ var message=new Vue({
                     var _url ='/api/dop/topics/page?checkStatus=2&type=' + _type + "&page=" +_inThis.page+'&size='+_inThis.size;
 
                     if(_inThis.type*1 == 1){
-                        _url ='/api/dop/topics/page?checkStatus=2&uid=' + Base.getCookies("uid") +"&classId="+Base.getCookies("cid")+ "&page=" +_inThis.page+'&size='+_inThis.size;
+                        _url ='/api/dop/topics/page?checkStatus=2&classId='+Base.getCookies("cid")+ "&page=" +_inThis.page+'&size='+_inThis.size;
                     }
 
                     if(_inThis.type*1 == 2){

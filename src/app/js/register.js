@@ -86,6 +86,7 @@ var login=new Vue({
                 Base.Messager.open("请选择头像")
                 return;
             }
+            Base.Messager.loading("正在注册中...")
             _inThis.checkUser()
             if(!_inThis.isuser){
                 return "身份信息不匹配，请检查姓名或者身份证后六位是否输入错误！"
@@ -101,6 +102,7 @@ var login=new Vue({
                 dataType: 'json',
                 success: function (json) {
                     if (json.code * 1 == 1) {
+                        Base.Messager.hideLoading()
                         Base.Messager.loading("注册成功,正在登录")
                         _inThis.login();
                     } else {
