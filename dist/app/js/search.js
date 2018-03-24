@@ -13,7 +13,8 @@ var search=new Vue({
         years:"",
         province:"",
         city:"",
-        area:""
+        area:"",
+        isfirst:1
     },
     methods:{
         goback: function(){
@@ -60,6 +61,12 @@ var search=new Vue({
                             /*else{
                                 $(".List").append("<p style='font-size: .24rem;text-align: center'>没有数据哦</p>")
                             }*/
+
+                            if(_inThis.isfirst*1 == 1 && data.rows.length == 0){
+                                $(".List").append("<p style='font-size: .24rem;text-align: center'>没有数据哦</p>")
+                            }
+
+                            _inThis.isfirst++
                             var arrLen = data.rows.length;
                             if(arrLen > 0){
 
