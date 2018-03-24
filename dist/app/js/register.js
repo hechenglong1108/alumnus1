@@ -159,7 +159,10 @@ var login=new Vue({
                 }else{
                     _inThis.isuser = 0
                     Base.Messager.open(json.message)
-                    Base.Messager.hideLoading()
+                    setTimeout(function(){
+                        Base.Messager.hideLoading()
+                    },2000)
+
                 }
             })
         },
