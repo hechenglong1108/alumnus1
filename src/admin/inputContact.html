@@ -80,9 +80,10 @@
                             layer.msg(json.message || "导入成功")
                             contact.createtable()
                             setTimeout(function(){
+                                window.parent.location.reload(); //刷新父页面
                                 var index = parent.layer.getFrameIndex(window.name);
                                 parent.layer.close(index); //执行关闭
-                                location.href='contact.html'
+
                             },2000)
 
                         } else {

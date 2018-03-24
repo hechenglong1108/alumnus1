@@ -179,9 +179,10 @@
                 if(json.code*1 == 1){
                     layer.msg(json.message || "审核成功")
                     setTimeout(function(){
+                        window.parent.location.reload(); //刷新父页面
                         var index = parent.layer.getFrameIndex(window.name);
                         parent.layer.close(index);
-                        location.href='check.html'
+
                     },2000)
                 }else{
                     layer.msg(json.message)
