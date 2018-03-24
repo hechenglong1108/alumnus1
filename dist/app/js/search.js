@@ -23,6 +23,8 @@ var search=new Vue({
         search: function(){
 
             var _inThis = this;
+            $(".tishi").html("");
+            _inThis.isfirst = 1;
             _inThis.studentsList = [];
 
 
@@ -63,7 +65,7 @@ var search=new Vue({
                             }*/
 
                             if(_inThis.isfirst*1 == 1 && data.rows.length == 0){
-                                $(".List").append("<p style='font-size: .24rem;text-align: center'>没有数据哦</p>")
+                                $(".tishi").html("<p style='font-size: .24rem;text-align: center'>没有数据哦</p>")
                             }
 
                             _inThis.isfirst++
