@@ -156,6 +156,7 @@ var login=new Vue({
                     _inThis.isuser = 1
                 }else{
                     _inThis.isuser = 0
+                    Base.Messager.open(json.message)
                 }
             })
         },
