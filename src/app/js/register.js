@@ -244,7 +244,7 @@ var login=new Vue({
                 url:"/api/wns/user/company/list",
                 data:{
                     type:3,
-                    cid:_inThis.years
+                    pCid:_inThis.years
                 },
                 type:"get"
             },function(json){
