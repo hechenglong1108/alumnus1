@@ -55,6 +55,7 @@ var search=new Vue({
                         dataType: 'json',
                         success: function(data){
                             if(!data.rows){
+                                $(".dropload-down").append(me.opts.domDown.domNoData);
                                 return;
                             }
                             var arrLen = data.rows.length;
