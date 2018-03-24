@@ -57,6 +57,7 @@ var search=new Vue({
                             if(!data.rows){
                                 return;
                             }else{
+                                $(".List").append("<p style='font-size: .24rem;text-align: center'>没有数据哦</p>")
                                 $(".dropload-down").append(me.opts.domDown.domNoData);
                             }
                             var arrLen = data.rows.length;
