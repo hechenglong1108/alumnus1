@@ -91,7 +91,7 @@ var message=new Vue({
         /*取消评论*/
         deletepinglun: function(){
             this.ispinglun = 0
-            this.messagecontent = ""
+            $(".pingluntexts").val("")
         },
         /*发布评论*/
         releasepinglun: function() {
@@ -111,8 +111,9 @@ var message=new Vue({
             },function(json){
                 if(json.code*1 == 1){
                     Base.Messager.open("评论成功,等待管理员审核");
+                    $(".pingluntexts").val("")
                     _inThis.ispinglun = 0;
-                    _inThis.messagecontent = ""
+
                    /* var _url = window.location.href.split("app/")[1];
                     location.href = _url*/
                 }else{
