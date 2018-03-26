@@ -194,5 +194,11 @@ gulp.task('webserver',function(){
 
 //gulp默认任务 借用sequence插件 解决任务同步问题
 gulp.task('default', function(cb) {
-    runSequence('cleanup', ['script', 'css', 'imgmin','auto', 'fileinclude'])(cb);
+    runSequence('cleanup', ['script', 'css', 'imgmin','auto', 'fileinclude','copyttf'])(cb);
+});
+
+
+gulp.task("copyttf",function(){
+    return gulp.src(['./src/**/**.eot','./src/**/**.svg','./src/**/**.ttf','./src/**/**.woff'])
+        .pipe(gulp.dest('./dist'));
 });
