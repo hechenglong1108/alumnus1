@@ -170,7 +170,7 @@ var login=new Vue({
         getProvince: function(){
             var _inThis = this;
             Base.loadJson({
-                url:"/api/dop/region/search?page=1&size=1000",
+                url:"/api/wns/region/search?page=1&size=1000",
                 data:{
                     parentId:1
                 },
@@ -188,7 +188,7 @@ var login=new Vue({
         getCity: function(){
             var _inThis = this;
             Base.loadJson({
-                url:"/api/dop/region/search?page=1&size=1000",
+                url:"/api/wns/region/search?page=1&size=1000",
                 data:{
                     parentId:_inThis.province
                 },
@@ -206,7 +206,7 @@ var login=new Vue({
         getArea: function(){
             var _inThis = this;
             Base.loadJson({
-                url:"/api/dop/region/search?page=1&size=1000",
+                url:"/api/wns/region/search?page=1&size=1000",
                 data:{
                     parentId:_inThis.city
                 },
