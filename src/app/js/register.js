@@ -82,10 +82,10 @@ var login=new Vue({
                 Base.Messager.open("请选择手机号是否公开")
                 return;
             }
-            if(!$("#headerss").val()){
+            /*if(!$("#headerss").val()){
                 Base.Messager.open("请选择头像")
                 return;
-            }
+            }*/
             Base.Messager.loading("正在注册中...")
             _inThis.checkUser()
             if(!_inThis.isuser){
