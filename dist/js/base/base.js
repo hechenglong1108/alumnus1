@@ -34,7 +34,7 @@ var Base = {
                         }
                     })
                 }else{
-                    location.href = 'register.html'
+                    location.href = 'login.html'
                 }
 
 
