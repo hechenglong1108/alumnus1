@@ -1,15 +1,16 @@
 .header {
-    height: .6rem;
+    height: 1rem;
     width: 100%;
     position: relative;
     background: transparent;
+    border-bottom: 1px solid #ddd;
 }
 
 .header > p {
-    height: .6rem;
-    line-height: .6rem;
+    height: 1rem;
+    line-height: 1rem;
     text-align: center;
-    font-size: .26rem;
+    font-size: .3rem;
     font-family: "PingFangSC-Medium";
 }
 
@@ -73,6 +74,7 @@
     width: 4rem;
     height: .6rem;
     border: none;
+    font-size: .28rem;
     border-radius: .4rem;
     background: #999999;
     margin-left: 1.75rem;
@@ -82,5 +84,5 @@
 .gologin{
     margin-bottom: 4rem;
     font-size: .25rem;
-    color: #c2c2c2;
+    color: #352d2d;
 }
