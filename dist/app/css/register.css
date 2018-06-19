@@ -25,7 +25,7 @@
     width: 100%;
     display: inline-block;
     height: 0.4rem;
-    font-size: 0.24rem;
+    font-size: 0.26rem;
     margin-left: .3rem;
     position: relative; }
 .reg  ul  li  label i{
@@ -46,6 +46,7 @@
     border: 1px solid #ddd;
     border-radius: .2rem;
     padding-left: .3rem;
+    font-size: .26rem;
     margin-left: .3rem; }
 .reg  ul  li  label  select {
     background: #fff;
@@ -66,6 +67,7 @@
     height: .8rem;
     line-height: .8rem;
     width: 1.5rem;
+    font-size: .26rem;
     font-family: "PingFangSC-Regular";
     border: 1px solid #ddd;
     border-radius: .2rem;padding-left: .3rem;
