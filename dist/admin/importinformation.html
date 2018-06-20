@@ -2,53 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>机械校友</title>
+    <title>电气学院校友</title>
     <link rel="stylesheet" href="js/layui/css/layui.css">
     <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
 
+
 <div>
     <ul class="header">
         <li><a href="reglist.html">注册列表</a></li>
-         <li><a href="importinformation.html">导入数据</a></li>
-        <li class="active"><a href="check.html">留言审核</a></li>
+        <li class="active"><a href="importinformation.html">导入数据</a></li>
+        <li ><a href="check.html">留言审核</a></li>
         <li><a href="message.html">发布信息</a></li>
         <li><a href="contact.html">学院信息管理</a></li>
+
     </ul>
 </div>
 
 <blockquote class="layui-elem-quote mylog-info-tit">
     <!--按钮操作区域-->
     <button data-method="offset" data-type="auto" id="shuaxin" class="layui-btn">刷新</button>
-    <a  data-method="offset" data-type="auto" id="delete" class="layui-btn layui-btn layui-btn-danger">删除</a>
-    <button data-method="offset" data-type="auto" id="update" class="layui-btn layui-btn-normal">审核</button>
+    <button data-method="offset" data-type="auto" id="import" class="layui-btn layui-btn-normal">导入</button>
 </blockquote>
 <table id="list" lay-filter="test"></table>
 </body>
 
 <script type="text/html" id="titleTpl1">
-    {{#  if(d.messageType*1 == 1){ }}
-    <span>留言项目审核</span>
+    {{#  if(d.moblieIsplay*1 == 1){ }}
+    <span>是</span>
     {{#  } else { }}
-    <span>留言审核</span>
-    {{#  } }}
-</script>
-
-<script type="text/html" id="titleTpl2">
-    {{#  if(d.messageStatus*1 == 1){ }}
-    <span>待审核</span>
-    {{#  } else { }}
-        {{#  if(d.messageStatus*1 == 1){ }}
-            <span>通过</span>
-        {{#  } else { }}
-            <span>不通过</span>
-        {{#  } }}
+    <span>否</span>
     {{#  } }}
 </script>
 <script src="../js/base/jquery.js?v=1.0.0"></script>
 <script src="../js/base/layer.js?v=1.0.0"></script>
 <script src="../js/base/base.js?v=1.0.0"></script>
 <script src="js/layui/layui.all.js"></script>
-<script src="js/check.js"></script>
+<script src="js/importinformation.js"></script>
 </html>

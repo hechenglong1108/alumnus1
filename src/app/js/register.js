@@ -18,6 +18,7 @@ var login=new Vue({
         department:"",
         post:"",
         mobile:"",
+        email:"",
         moblieStatus:"",
         heads:"",
         isuser:0,/*是否通过身份验证*/
@@ -72,6 +73,10 @@ var login=new Vue({
 
             if(!this.mobile){
                 Base.Messager.open("请输入手机号码")
+                return;
+            }
+            if(!this.email){
+                Base.Messager.open("请输入邮箱")
                 return;
             }
             if(!Base.Tools.isMobile(this.mobile)){
