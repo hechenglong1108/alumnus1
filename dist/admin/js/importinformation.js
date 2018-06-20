@@ -35,6 +35,47 @@ var reglist = {
         })
 
 
+         $("#delete").click(function() {
+            if (!Base.isadmin) {
+                Base.Messager.open("您的账号不是管理员，请登录管理员账号");
+                setTimeout(function() {
+                    location.href = 'login.html'
+                }, 2000)
+            }
+            var _selected = table.checkStatus('testReload').data;
+            if (_selected.length != 1) {
+                layer.msg('请选择一条数据。。', { icon: 5 });
+                return;
+            }
+
+            layer.open({
+                    content: '确定删除？',
+                    btn: ['确定', '取消'],
+                    yes: function(index, layero) {
+                        Base.loadJson({
+                            url: "/api/dop/found/del",
+                            data: {
+                                uid: _selected[0].uid
+                            },
+                            type: "POST"
+                        }, function(json) {
+                            if (json.code * 1 == 1) {
+                                Base.Messager.open("删除成功")
+                                _inThis.createtable()
+                            } else {
+                                Base.Messager.open(json.message)
+                            }
+                        })
+                    },
+                    btn2: function(index, layero) {
+                        layer.closeAll();
+                    }
+                });
+
+            
+        })
+
+
         $("#import").click(function(){
             if(!Base.isadmin){
                 Base.Messager.open("您的账号不是管理员，请登录管理员账号");
