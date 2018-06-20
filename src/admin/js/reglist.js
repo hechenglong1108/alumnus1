@@ -76,6 +76,7 @@ var reglist = {
                 {field: 'department', title: '所在部门', width: 150},
                 {field: 'position', title: '职务', width: 100},
                 {field: 'mobile', title: '手机号码', width: 150},
+                {field: 'email', title: '邮箱', width: 150},
                 {field: 'regionTime', title: '注册时间', width: 100,}
             ]],
             page: true
